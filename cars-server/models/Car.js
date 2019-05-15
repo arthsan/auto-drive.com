@@ -5,10 +5,10 @@ const { Schema } = mongoose;
 const carSchema = new Schema({
   model: String, // model
   brand: String,
-  transmission: String,
+  transmission: { type: String, enum: ['Automatic', 'Manual'] },
   category: String,
   rank: {
-    id: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
+    rating: Number,
     year: Number,
     price: Number,
     ipva: Number,
@@ -21,7 +21,7 @@ const carSchema = new Schema({
     warranty: Number,
     trunk: Number,
   },
-  review: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
+  reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
   assessoies: {
     security: {
       abs: Boolean,
@@ -37,7 +37,7 @@ const carSchema = new Schema({
       autoPilot: Boolean,
       leatherSeat: Boolean,
       sunRoof: Boolean,
-      steeringWheel: Boolean,
+      steeringWheelAdjust: Boolean,
       alloyWheel: Boolean,
       headlightSensor: Boolean,
     },
@@ -46,7 +46,7 @@ const carSchema = new Schema({
       usb: Boolean,
       gps: Boolean,
       boardPc: Boolean,
-      steeringfunction: Boolean,
+      steeringMultiFunction: Boolean,
       bluetooth: Boolean,
     },
   },
