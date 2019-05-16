@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // import the service file since we need it to send (and get) the data to(from) server
-import service from '../api/service';
+import service from '../../api/service';
 
 class AddCar extends Component {
     constructor(props) {

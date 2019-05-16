@@ -29,6 +29,13 @@ const app = express();
 //UPLOAD IMAGE
 app.use('/api', require('./routes/file-upload-image'));
 
+// CORS
+app.use(cors({
+  // this could be multiple domains/origins, but we will allow just our React app
+  credentials: true,
+  origin: ['http://localhost:3000'],
+}));
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -71,11 +78,7 @@ const index = require('./routes/index');
 app.use('/', index);
 app.use('/auth', auth);
 
-// CORS
-app.use(cors({
-  // this could be multiple domains/origins, but we will allow just our React app
-  origin: ['http://localhost:3000'],
-}));
+
 
 // ROUTES MIDDLEWARE STARTS HERE:
 app.use('/api', require('./routes/upload'));
