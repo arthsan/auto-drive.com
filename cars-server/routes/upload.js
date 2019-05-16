@@ -11,6 +11,7 @@ const Upload = require('../models/Car');
 router.post('/upload', (req, res, next)=> {
   const newCar = new Upload(
     {
+      imageUrl: '',
       model: req.body.model,
       brand: req.body.brand,
       transmission: req.body.transmission,

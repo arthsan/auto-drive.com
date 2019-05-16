@@ -28,6 +28,11 @@ class NavBar extends Component {
       <nav className="nav-style">
         <h1><Link component={Home} to='/'>PROJECT CARS</Link></h1>
         <div>
+          <Link to='/admin/addcar'>
+            <button >Add Car</button>
+          </Link>
+        </div>
+        <div>
           <Link to='/'>
             <button onClick={() => this.logoutUser()}>Logout</button>
           </Link>

@@ -26,7 +26,7 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
-//UPLOAD IMAGE
+// UPLOAD IMAGE
 app.use('/api', require('./routes/file-upload-image'));
 
 // CORS
@@ -73,11 +73,12 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 const auth = require('./routes/auth');
 const index = require('./routes/index');
+const newCar = require('./routes/upload');
 
 
 app.use('/', index);
 app.use('/auth', auth);
-
+app.use('/', newCar);
 
 
 // ROUTES MIDDLEWARE STARTS HERE:

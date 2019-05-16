@@ -50,7 +50,7 @@ render() {
       <NavBar getUser={this.getTheUser} user={this.state.loggedInUser} />
         <Switch>
           <Route exact path='/' render={() => <Home getUser={this.getTheUser}/>}/>
-          <ProtectedRoute user={this.state.loggedInUser} path='./components/addcar/AddCar.js' component={AddCar} />
+          <ProtectedRoute user={this.state.loggedInUser} path='/admin/addcar' component={AddCar} />
         </Switch>
       </div> 
     );
