@@ -12,7 +12,6 @@ const session = require('express-session');
 const passport = require('passport');
 const cors = require('cors');
 
-
 mongoose
   .connect('mongodb://localhost/cars-server', { useNewUrlParser: true })
   .then((x) => {
