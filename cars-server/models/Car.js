@@ -7,6 +7,7 @@ const carSchema = new Schema({
   brand: String,
   transmission: { type: String, enum: ['Automatic', 'Manual'] },
   category: String,
+  image: [{ type: Schema.Types.ObjectId, ref: 'Image' }],
   rank: {
     rating: Number,
     year: Number,
@@ -22,7 +23,7 @@ const carSchema = new Schema({
     trunk: Number,
   },
   reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
-  assessoies: {
+  accessories: {
     security: {
       abs: Boolean,
       parkSensor: Boolean,
@@ -31,7 +32,7 @@ const carSchema = new Schema({
       backupCam: Boolean,
       alarm: Boolean,
     },
-    confort: {
+    comfort: {
       airCondit: Boolean,
       heightSeat: Boolean,
       autoPilot: Boolean,

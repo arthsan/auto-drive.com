@@ -5,13 +5,12 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const favicon = require('serve-favicon');
-const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
-
+const cors = require('cors');
 
 
 mongoose
@@ -27,6 +26,9 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+
+//UPLOAD IMAGE
+app.use('/api', require('./routes/file-upload-image'));
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -53,7 +55,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.use(session({
   secret:"some secret goes here",
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
 }));
 
 // Passport
@@ -66,9 +68,18 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const auth = require('./routes/auth');
 const index = require('./routes/index');
 
+
 app.use('/', index);
 app.use('/auth', auth);
 
+// CORS
+app.use(cors({
+  // this could be multiple domains/origins, but we will allow just our React app
+  origin: ['http://localhost:3000'],
+}));
+
+// ROUTES MIDDLEWARE STARTS HERE:
+app.use('/api', require('./routes/upload'));
+
 
 module.exports = app;
-
