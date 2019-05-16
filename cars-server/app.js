@@ -11,7 +11,7 @@ const logger = require('morgan');
 const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
-const cors = require('cors')
+const cors = require('cors');
 
 mongoose
   .connect('mongodb://localhost/cars-server', { useNewUrlParser: true })

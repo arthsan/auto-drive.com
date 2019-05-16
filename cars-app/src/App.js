@@ -44,7 +44,7 @@ render() {
     console.log(this.state.loggedInUser)
     return (
       <div className="App">
-      <NavBar user={this.state.loggedInUser} />
+      <NavBar getUser={this.getTheUser} user={this.state.loggedInUser} />
         <Switch>
           <Route exact path='/' render={() => <Home getUser={this.getTheUser}/>}/>
           {/* <ProtectedRoute user={this.state.loggedInUser} path='/projects/:id' component={ProjectDetails} /> */}
