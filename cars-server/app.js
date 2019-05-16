@@ -11,8 +11,7 @@ const logger = require('morgan');
 const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
-
-
+const cors = require('cors')
 
 mongoose
   .connect('mongodb://localhost/cars-server', { useNewUrlParser: true })
@@ -27,6 +26,11 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+
+app.use(cors({
+  credentials: true,
+  origin: ['http://localhost:3000'] // <== this will be the URL of our React app (it will be running on port 3000)
+}));
 
 // Middleware Setup
 app.use(logger('dev'));
