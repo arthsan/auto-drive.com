@@ -7,6 +7,7 @@ import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import ProtectedRoute from './components/auth/protected-route';
 import AuthService from './components/auth/auth-service';
+import AddCar from './components/addcar/AddCar';
 
 
 // 
@@ -49,7 +50,7 @@ render() {
       <NavBar getUser={this.getTheUser} user={this.state.loggedInUser} />
         <Switch>
           <Route exact path='/' render={() => <Home getUser={this.getTheUser}/>}/>
-          {/* <ProtectedRoute user={this.state.loggedInUser} path='/projects/:id' component={ProjectDetails} /> */}
+          <ProtectedRoute user={this.state.loggedInUser} path='./components/addcar/AddCar.js' component={AddCar} />
         </Switch>
       </div> 
     );

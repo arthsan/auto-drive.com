@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const favicon = require('serve-favicon');
-const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
@@ -27,9 +26,14 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
+//UPLOAD IMAGE
+app.use('/api', require('./routes/file-upload-image'));
+
+// CORS
 app.use(cors({
+  // this could be multiple domains/origins, but we will allow just our React app
   credentials: true,
-  origin: ['http://localhost:3000'] // <== this will be the URL of our React app (it will be running on port 3000)
+  origin: ['http://localhost:3000'],
 }));
 
 // Middleware Setup
@@ -57,7 +61,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.use(session({
   secret:"some secret goes here",
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
 }));
 
 // Passport
@@ -70,9 +74,14 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const auth = require('./routes/auth');
 const index = require('./routes/index');
 
+
 app.use('/', index);
 app.use('/auth', auth);
 
 
-module.exports = app;
 
+// ROUTES MIDDLEWARE STARTS HERE:
+app.use('/api', require('./routes/upload'));
+
+
+module.exports = app;
