@@ -20,7 +20,7 @@ export default {
       .catch(errorHandler);
   },
 
-  saveNewThing (newCar) {
+  saveNewCar(newCar) {
     console.log('new thing is: ', newCar)
     // return service.post('/')
     return service.post('/upload', newCar)

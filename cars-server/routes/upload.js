@@ -34,7 +34,7 @@ router.post('/upload', (req, res, next)=> {
       accessories: {
         security: {
           abs: req.body.abs,
-          parkSensor: req.body.parkSensor,
+          parkSensor: false,
           airBag: req.body.airBag,
           fogLights: req.body.fogLights,
           backupCam: req.body.backupCam,
