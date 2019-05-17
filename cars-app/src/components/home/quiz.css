@@ -1,0 +1,14 @@
+.quiz {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz > form > p {
+  font-size: 30px;
+}
+
+.quiz > form > input {
+  font-size: 25px;
+}

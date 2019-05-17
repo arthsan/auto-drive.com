@@ -1,36 +1,55 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Carrousel from './Carrousel';
 import MarketCard from './MarketCard';
+import Search from './Search'
+import AuthService from '../auth/auth-service';
+import Quiz from './Quiz'
 // import axios from 'axios';
 
 
 class Home extends Component {
-  constructor() {
-    super()
-    this.state = {
-
+  constructor(props) {
+    super(props)
+    this.state = { loggedInUser: null };
+    this.service = new AuthService();
     }
-  }
 
   render() {
-    return(
-      <div>
-          <div>
-            <Carrousel />
-          </div>
-          <div>
-            <MarketCard />
-          </div>
-        <Link to='/Searchbar'>
+    if(this.props.user) {
+      return(
         <div>
-          <h2>Searchbar</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <div>
+              <Carrousel />
+            </div>
+            <div >
+              <MarketCard />
+            </div>
+            <div>
+              <Search />
+            </div>
+            <div>
+                <Quiz />
+            </div>
         </div>
-        </Link>
-      </div>
-    )
+      )
+    } else {
+      return(
+        <div>
+            <div>
+              <Carrousel />
+            </div>
+            <div >
+              <MarketCard />
+            </div>
+            <div>
+              <Search />
+            </div>
+        </div>
+      )
+    }
+    
   }
-}
+
+    }
 
 export default Home;

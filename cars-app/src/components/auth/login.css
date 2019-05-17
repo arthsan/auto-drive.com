@@ -1,0 +1,9 @@
+.log-body {
+    height: 50vh;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}

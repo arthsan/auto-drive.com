@@ -8,7 +8,7 @@ import Signup from './components/auth/Signup';
 import ProtectedRoute from './components/auth/protected-route';
 import AuthService from './components/auth/auth-service';
 import AddCar from './components/addcar/AddCar';
-
+import Footer from './components/footer/Footer'
 
 // 
 class App extends Component {
@@ -42,16 +42,17 @@ class App extends Component {
   
   
 render() {
-  {this.fetchUser()}
+  this.fetchUser()
   if(this.state.loggedInUser){
     console.log(this.state.loggedInUser)
     return (
       <div className="App">
       <NavBar getUser={this.getTheUser} user={this.state.loggedInUser} />
         <Switch>
-          <Route exact path='/' render={() => <Home getUser={this.getTheUser}/>}/>
+          <Route exact path='/' render={() => <Home user={this.state.loggedInUser} getUser={this.getTheUser}/>}/>
           <ProtectedRoute user={this.state.loggedInUser} path='/admin/addcar' component={AddCar} />
         </Switch>
+        <Footer />
       </div> 
     );
   } else {
@@ -64,6 +65,7 @@ render() {
               <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
               {/* <ProtectedRoute user={this.state.loggedInUser} path='/projects/:id' component={ProjectDetails} /> */}
             </Switch>
+            <Footer />
         </div>
       );
     }

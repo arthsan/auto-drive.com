@@ -32,11 +32,11 @@ class NavBar extends Component {
         <div className='adjust row'>
           <div>
           <Link to='/admin/addcar'>
-            <button class="btn btn-dark" >Add Car</button>
+            <button className="btn btn-dark" >Add Car</button>
           </Link>
         </div>
           <div><Link to='/'>
-            <button type="button" class="btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
+            <button type="button" className="btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
           </Link></div>
         </div>
       </nav>
@@ -48,8 +48,8 @@ class NavBar extends Component {
         <nav className="nav justify-content-between nav-style">
           <h1 className='adjust logo'><Link to='/'>PROJECT CARS</Link></h1>
           <div className='row adjust'>
-          <div><Link to='/login'><button type="button" class="btn btn-dark">Login</button></Link></div>
-          <div><Link to='/signup'><button type="button" class="btn btn-dark">Signup</button></Link></div>
+          <div><Link to='/login'><button type="button" className="btn btn-dark">Login</button></Link></div>
+          <div><Link to='/signup'><button type="button" className="btn btn-dark">Signup</button></Link></div>
           </div>
       </nav>
       </div>
