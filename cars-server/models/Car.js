@@ -7,7 +7,7 @@ const carSchema = new Schema({
   brand: String,
   transmission: { type: String, enum: ['Automatic', 'Manual'] },
   category: String,
-  image: [{ type: Schema.Types.ObjectId, ref: 'Image' }],
+  imageUrl: String,
   rank: {
     rating: Number,
     year: Number,

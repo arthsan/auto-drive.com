@@ -51,14 +51,16 @@ class AddCar extends Component {
       bluetooth: false,
     }
   }
-    // handleImage = e => {
-    //   e.preventDefault();
-    //   Axios.post('url')
-    //     .then(response => {
-    //       this.setState({imgurl: response})
-    //     })
-    //     .catch(error => console.log(error))
-    // }
+  
+  // handleImage = e => {
+  //   e.preventDefault();
+  //   Axios.post('/upload', uploader.single('imageUrl'), (req, res, next) => {
+  //     .then(response => {
+  //     this.setState({imageUrl: response})
+  //     })
+  //     .catch(error => console.log(error))
+  //   }
+  // }
 
   handleChange = e => {  
         const { name, value } = e.target;
@@ -124,13 +126,6 @@ class AddCar extends Component {
                 name="description" 
                 value={ this.state.description } 
                 onChange={ e => this.handleChange(e)} />
-            </li>
-            {/* BUTTOM SAVE */}
-            <li>
-              <input 
-                type="file" 
-                onChange={(e) => this.handleFileUpload(e)} /> 
-              <button type="submit">Save Car</button>
             </li>
             {/* FORM */}
             <li>
@@ -348,6 +343,13 @@ class AddCar extends Component {
             <li className="custom-control custom-switch">
               <input type="checkbox" id="customSwitch20" class="custom-control-input" name='bluetooth' onChange={e => this.handleSwitch(e)} />
               <label className="custom-control-label" for="customSwitch20">Bluetooth</label>
+            </li>
+            {/* BUTTOM SAVE */}
+            <li>
+              <input 
+                type="file" 
+                onChange={(e) => this.handleFileUpload(e)} /> 
+              <button type="submit">Save Car</button>
             </li>
           </ul>   
         </form>

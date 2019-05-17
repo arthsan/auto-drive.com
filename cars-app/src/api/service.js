@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const service = axios.create({
-  baseURL: 'http://localhost:5000/',
+  baseURL: 'http://localhost:5000/api',
   // withCredentials: true // => you might need this when having the users in the app 
 });
 
@@ -15,15 +15,14 @@ export default {
 
   handleUpload (theFile) {
     console.log('file in service: ', theFile)
-    return service.post('/api/upload', theFile)
+    return service.post('/upload', theFile)
       .then(res => res.data)
       .catch(errorHandler);
   },
 
   saveNewCar(newCar) {
     console.log('new thing is: ', newCar)
-    // return service.post('/')
-    return service.post('/upload', newCar)
+    return service.post('/cars/create', newCar)
       .then(res => res.data)
       .catch(errorHandler);
   }
