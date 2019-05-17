@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../auth/auth-service';
-import Home from '../home/Home'
+import Home from '../home/Home';
+import './navbar.css';
 
 class NavBar extends Component {
   constructor(props){
@@ -25,22 +26,28 @@ class NavBar extends Component {
   render() {
   if(this.state.loggedInUser) {
     return (
-      <nav className="nav-style">
-        <h1><Link component={Home} to='/'>PROJECT CARS</Link></h1>
-        <div>
-          <Link to='/'>
-            <button onClick={() => this.logoutUser()}>Logout</button>
-          </Link>
+      <div>
+      <nav className="nav justify-content-between nav-style">
+        <h1 className='adjust logo'><Link component={Home} to='/'>PROJECT CARS</Link></h1>
+        <div className='adjust row'>
+          <div><Link to='/'>
+            <button type="button" class="btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
+          </Link></div>
         </div>
       </nav>
+      </div>
     )
   } else {
     return (
-      <nav>
-        <h1><Link to='/'>PROJECT CARS</Link></h1>
-        <div><Link to ='/login'>Login</Link></div>
-        <div><Link to='/signup'>Signup</Link></div>
+      <div>
+        <nav className="nav justify-content-between nav-style">
+          <h1 className='adjust logo'><Link to='/'>PROJECT CARS</Link></h1>
+          <div className='row adjust'>
+          <div><Link to='/login'><button type="button" class="btn btn-dark">Login</button></Link></div>
+          <div><Link to='/signup'><button type="button" class="btn btn-dark">Signup</button></Link></div>
+          </div>
       </nav>
+      </div>
     )
   }
 }

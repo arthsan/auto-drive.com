@@ -1,0 +1,16 @@
+.cards {
+    margin: 20px auto;
+}
+
+.card-size {
+    width: 25%;
+    padding: 10px;
+    border: 2px solid rgba(68, 162, 156, 0.623);
+    border-radius: 30px;
+    background-color:  rgb(217, 228, 225)
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
