@@ -30,6 +30,11 @@ class NavBar extends Component {
       <nav className="nav justify-content-between nav-style">
         <h1 className='adjust logo'><Link component={Home} to='/'>PROJECT CARS</Link></h1>
         <div className='adjust row'>
+          <div>
+          <Link to='/admin/addcar'>
+            <button class="btn btn-dark" >Add Car</button>
+          </Link>
+        </div>
           <div><Link to='/'>
             <button type="button" class="btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
           </Link></div>
