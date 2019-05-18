@@ -21,7 +21,7 @@ export default {
   },
 
   saveNewCar(newCar) {
-    console.log('new thing is: ', newCar)
+    console.log('new car is: ', newCar)
     return service.post('/cars/create', newCar)
       .then(res => res.data)
       .catch(errorHandler);

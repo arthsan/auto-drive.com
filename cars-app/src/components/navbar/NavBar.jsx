@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../auth/auth-service';
-import Home from '../home/Home';
 import './navbar.css';
 
 class NavBar extends Component {
@@ -28,7 +27,7 @@ class NavBar extends Component {
     return (
       <div>
       <nav className="nav justify-content-between nav-style">
-        <h1 className='adjust logo'><Link component={Home} to='/'>PROJECT CARS</Link></h1>
+        <h1 className='adjust logo'><Link to='/'>PROJECT CARS</Link></h1>
         <div className='adjust row'>
           <div>
           <Link to='/admin/addcar'>

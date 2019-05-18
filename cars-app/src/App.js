@@ -44,7 +44,6 @@ class App extends Component {
 render() {
   this.fetchUser()
   if(this.state.loggedInUser){
-    console.log(this.state.loggedInUser)
     return (
       <div className="App">
       <NavBar getUser={this.getTheUser} user={this.state.loggedInUser} />
