@@ -8,6 +8,7 @@ const userSchema = new Schema({
   password: String,
   email: String,
   image: String,
+  role: { type: String, enum: ['ADMIN', 'GUEST'] },
   car: [{ type: Schema.Types.ObjectId, ref: 'Car' }],
   reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
 });

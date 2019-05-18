@@ -24,6 +24,7 @@ class NavBar extends Component {
 
   render() {
   if(this.state.loggedInUser) {
+    console.log(this.state.loggedInUser)
     return (
       <div>
       <nav className="nav justify-content-between nav-style">
