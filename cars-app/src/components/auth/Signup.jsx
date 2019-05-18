@@ -1,6 +1,7 @@
 import { Link, Redirect } from 'react-router-dom';
 import React, { Component } from 'react';
 import AuthService from './auth-service';
+import './login.css'
 
 class Signup extends Component {
   constructor(props){
@@ -47,15 +48,15 @@ class Signup extends Component {
       );
     } else {
       return(
-        <div>
-          <form onSubmit={this.handleFormSubmit}>
+        <div className='log-body'>
+          <form className='login' onSubmit={this.handleFormSubmit}>
             <label>Username:</label>
-            <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
+            <input type="text" name="username" className='btn btn-light' value={this.state.username} onChange={ e => this.handleChange(e)}/>
             
             <label>Password:</label>
-            <textarea name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
+            <input name="password" type='password' className='btn btn-light' value={this.state.password} onChange={ e => this.handleChange(e)} />
             
-            <input type="submit" value="Signup" />
+            <input type="submit" className='btn btn-dark' value="Signup" />
           </form>
     
           <p>Already have account? 
