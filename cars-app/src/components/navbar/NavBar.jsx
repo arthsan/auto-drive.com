@@ -24,7 +24,7 @@ class NavBar extends Component {
 
   render() {
   if(this.state.loggedInUser) {
-    console.log(this.state.loggedInUser)
+    if(this.state.loggedInUser.role === 'ADMIN') {
     return (
       <div>
       <nav className="nav justify-content-between nav-style">
@@ -35,6 +35,9 @@ class NavBar extends Component {
             <button className="btn btn-dark" >Add Car</button>
           </Link>
         </div>
+        <div>
+          {this.state.loggedInUser.username}
+        </div>
           <div><Link to='/'>
             <button type="button" className="btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
           </Link></div>
@@ -42,6 +45,23 @@ class NavBar extends Component {
       </nav>
       </div>
     )
+    } else {
+      return (
+        <div>
+        <nav className="nav justify-content-between nav-style">
+          <h1 className='adjust logo'><Link to='/'>PROJECT CARS</Link></h1>
+          <div className='adjust row'>
+            <div>
+            {this.state.loggedInUser.username}
+            </div>
+            <div><Link to='/'>
+              <button type="button" className="btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
+            </Link></div>
+          </div>
+        </nav>
+        </div>
+      )
+    }
   } else {
     return (
       <div>
