@@ -26,8 +26,6 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
-// UPLOAD IMAGE
-app.use('/api', require('./routes/file-upload-image'));
 
 // CORS
 app.use(cors({
@@ -76,13 +74,12 @@ const index = require('./routes/index');
 const newCar = require('./routes/upload');
 
 
+// UPLOAD IMAGE
+app.use('/', require('./routes/file-upload-image'));
+
 app.use('/', index);
 app.use('/auth', auth);
 app.use('/', newCar);
-
-
-// ROUTES MIDDLEWARE STARTS HERE:
-app.use('/api', require('./routes/upload'));
 
 
 module.exports = app;

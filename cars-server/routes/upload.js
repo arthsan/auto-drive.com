@@ -7,11 +7,20 @@ const router = express.Router();
 const Upload = require('../models/Car');
 
 
+// GET ROUTE
+router.get('/api/cars', (req, res, next) => {
+  Upload.find()
+    .then((uploadFromDB) => {
+      res.status(200).json(uploadFromDB);
+    })
+    .catch(err => next(err));
+});
+
 // POST route => to create a new project
-router.post('/upload', (req, res, next)=> {
+router.post('/api/cars/create', (req, res, next)=> {
   const newCar = new Upload(
     {
-      imageUrl: '',
+      imageUrl: req.body.imageUrl,
       model: req.body.model,
       brand: req.body.brand,
       transmission: req.body.transmission,
@@ -34,7 +43,7 @@ router.post('/upload', (req, res, next)=> {
       accessories: {
         security: {
           abs: req.body.abs,
-          parkSensor: req.body.parkSensor,
+          parkSensor: false,
           airBag: req.body.airBag,
           fogLights: req.body.fogLights,
           backupCam: req.body.backupCam,
@@ -64,7 +73,7 @@ router.post('/upload', (req, res, next)=> {
 
   newCar.save()
     .then((response) => {
-      res.json(response);
+      res.status(200).json(response);
     })
     .catch((err) => {
       res.json(err);

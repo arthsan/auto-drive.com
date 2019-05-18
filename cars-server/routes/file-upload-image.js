@@ -5,7 +5,7 @@ const router = express.Router();
 // include CLOUDINARY:
 const uploader = require('../configs/cloudinary-setup');
 
-router.post('/uploadimage', uploader.single('imageUrl'), (req, res, next) => {
+router.post('/api/upload', uploader.single('imageUrl'), (req, res, next) => {
   // console.log('file is: ', req.file)
 
   if (!req.file) {
