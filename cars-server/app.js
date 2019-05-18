@@ -13,7 +13,7 @@ const passport = require('passport');
 const cors = require('cors');
 
 mongoose
-  .connect('mongodb://localhost/cars-server', { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI)
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
@@ -57,7 +57,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // SESSIONS
 
 app.use(session({
-  secret:"some secret goes here",
+  secret: 'some secret goes here',
   resave: true,
   saveUninitialized: true,
 }));
@@ -80,6 +80,11 @@ app.use('/', require('./routes/file-upload-image'));
 app.use('/', index);
 app.use('/auth', auth);
 app.use('/', newCar);
+
+app.use((req, res, next) => {
+  // If no routes match, send them the React HTML.
+  res.sendFile(`${__dirname}/public/index.html`);
+});
 
 
 module.exports = app;
