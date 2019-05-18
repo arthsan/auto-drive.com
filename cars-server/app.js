@@ -87,4 +87,7 @@ app.use((req, res, next) => {
 });
 
 
+<<<<<<< HEAD
 module.exports = app;
+=======
+>>>>>>> cf1a15f7050f7b55e4aeaf46b22d53a4426b89ac
