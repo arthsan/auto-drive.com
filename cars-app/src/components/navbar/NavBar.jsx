@@ -31,16 +31,19 @@ class NavBar extends Component {
         <h1 className='adjust logo'><Link to='/'>PROJECT CARS</Link></h1>
         <div className='adjust row'>
           <div>
-          <Link to='/admin/addcar'>
-            <button className="btn btn-dark" >Add Car</button>
-          </Link>
-        </div>
-        <div>
-          {this.state.loggedInUser.username}
-        </div>
-          <div><Link to='/'>
-            <button type="button" className="btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
-          </Link></div>
+          <div className="dropdown">
+            <Link to='/admin/addcar'><button className="btn btn-dark add-car" >Add Car</button></Link>
+            <a className="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {this.state.loggedInUser.username}
+            </a>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Profile</button>
+              </Link>
+              <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
+              </Link>
+            </div>
+          </div>
+          </div>
         </div>
       </nav>
       </div>
@@ -51,12 +54,17 @@ class NavBar extends Component {
         <nav className="nav justify-content-between nav-style">
           <h1 className='adjust logo'><Link to='/'>PROJECT CARS</Link></h1>
           <div className='adjust row'>
-            <div>
-            {this.state.loggedInUser.username}
+            <div className="dropdown">
+            <a className="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {this.state.loggedInUser.username}
+            </a>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Profile</button>
+              </Link>
+              <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
+              </Link>
             </div>
-            <div><Link to='/'>
-              <button type="button" className="btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
-            </Link></div>
+          </div>
           </div>
         </nav>
         </div>
