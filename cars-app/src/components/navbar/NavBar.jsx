@@ -37,7 +37,7 @@ class NavBar extends Component {
               {this.state.loggedInUser.username}
             </a>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Profile</button>
+              <Link to={`/profile/${this.state.loggedInUser._id}`} user={this.state.loggedInUser}><button type="button" className="dropdown-item btn btn-dark">Profile</button>
               </Link>
               <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
               </Link>
