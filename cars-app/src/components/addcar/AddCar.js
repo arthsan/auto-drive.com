@@ -230,8 +230,8 @@ class AddCar extends Component {
                   <input
                     type="text" 
                     className="form-control"
-                    name="fuel consumption" 
-                    value={ this.state.fuelCost } 
+                    name="fuelCost" 
+                    value={this.state.fuelCost} 
                     onChange={ e => this.handleChange(e)} />
                 </div>
                 <div className="form-group">

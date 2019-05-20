@@ -29,11 +29,14 @@ class Profile extends Component {
               {/* COLUNA 1 */}
               <div className="form-group">
                   <label>Name</label>
+                  <div className="row">
+                  <label>{}</label>
                   <input type="text"
                     className="form-control" 
                     name="name" 
                     value={ this.state.name } 
                     onChange={ e => this.handleChange(e)} />
+                  </div>
               </div>
             </div>
           </div>
