@@ -296,43 +296,43 @@ class AddCar extends Component {
             <div className="row">
               <div className="col col-pad">
               {/* COLUNA 1 -ITENS*/}
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch1" className="custom-control-input" name='abs' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch1">ABS</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch2" className="custom-control-input" name='parkSensor' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch2">Park Sensor</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch3" className="custom-control-input" name='airBag' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch3">Airbag</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch4" className="custom-control-input" name='fogLights' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch4">Fog Lights</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch5" className="custom-control-input" name='backupCam' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch5">Backup Cam</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch6" className="custom-control-input" name='alarm' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch6">Alarm</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch7" className="custom-control-input" name='airCondit' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch7">Air Conditioner</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch8" className="custom-control-input" name='heightSeat' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch8">Height Seat</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch9" className="custom-control-input" name='autoPilot' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch9">Auto Pilot</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch10" className="custom-control-input" name='leatherSeat' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch10">Leather Seat</label>
                 </div>
@@ -340,43 +340,43 @@ class AddCar extends Component {
 
               <div className="col col-pad">
                 {/* COLUNA 2 -ITENS */} 
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch11" className="custom-control-input" name='sunRoof' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch11">Sun Roof</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch12" className="custom-control-input" name='steeringWheelAdjust' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch12">Steering Wheel Adjust</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch13" className="custom-control-input" name='alloyWheel' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch13">Alloy Wheel</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch14" className="custom-control-input" name='headlightSensor' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch14">Headlight Sensor</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch15" className="custom-control-input" name='radio' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch15">Radio</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch16" className="custom-control-input" name='usb' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch16">USB</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch17" className="custom-control-input" name='gps' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch17">GPS</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch18" className="custom-control-input" name='boardPc' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch18">Computer Board</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch19" className="custom-control-input" name='steeringMultiFunction' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch19">Steering Multifunction</label>
                 </div>
-                <div className="custom-control custom-switch">
+                <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch20" className="custom-control-input" name='bluetooth' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch20">Bluetooth</label>
                 </div>
@@ -385,7 +385,7 @@ class AddCar extends Component {
           {/* </div> */}
 
           {/* BUTTOM SAVE */}
-          <div>
+          <div className="buttons">
             <input 
               type="file" 
               onChange={(e) => this.handleFileUpload(e)} /> 

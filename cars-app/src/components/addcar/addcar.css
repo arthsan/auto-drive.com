@@ -1,5 +1,12 @@
 
-
 .col-pad{
+  padding: 30px;
+}
+
+.switches {
+  text-align: left;
+}
+
+.buttons {
   padding: 30px;
 }
