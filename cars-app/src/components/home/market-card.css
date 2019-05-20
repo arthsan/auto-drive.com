@@ -1,5 +1,7 @@
+*{border: 1px solid red}
+
 .cards {
-    margin: 20px auto;
+   margin: 20px auto;
 }
 
 .card-size {
@@ -13,4 +15,9 @@
 .container {
     display: flex;
     justify-content: space-between;
+}
+
+.card-img-top {
+    width: 60%;
+    margin-left: 20%;
 }
