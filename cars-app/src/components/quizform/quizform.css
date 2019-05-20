@@ -1,0 +1,17 @@
+/* *{
+border: 1px solid red;
+} */
+
+.container-form{
+  padding: 0 20%;
+  text-align: left;
+}
+
+.label-form, .title-form{
+  padding: 0.5%;
+}
+
+.title-form{
+  text-align: left;
+  margin-left: 19.5%;
+}
