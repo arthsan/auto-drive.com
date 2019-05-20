@@ -33,11 +33,11 @@ class NavBar extends Component {
           <div>
           <div className="dropdown">
             <Link to='/admin/addcar'><button className="btn btn-dark add-car" >Add Car</button></Link>
-            <a className="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {this.state.loggedInUser.username}
+            <a className="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src={this.state.loggedInUser.image}/>
+              {this.state.loggedInUser.name}
             </a>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <Link to={`/profile/${this.state.loggedInUser._id}`} user={this.state.loggedInUser}><button type="button" className="dropdown-item btn btn-dark">Profile</button>
+              <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="dropdown-item btn btn-dark">Profile</button>
               </Link>
               <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
               </Link>
@@ -59,7 +59,7 @@ class NavBar extends Component {
               {this.state.loggedInUser.username}
             </a>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Profile</button>
+              <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="dropdown-item btn btn-dark">Profile</button>
               </Link>
               <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
               </Link>

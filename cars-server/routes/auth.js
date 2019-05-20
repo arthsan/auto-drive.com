@@ -110,35 +110,58 @@ authRoutes.get('/loggedin', (req, res, next) => {
   res.status(403).json({ message: 'Unauthorized' });
 });
 
-authRoutes.put('/edit/:id', (req, res, next) => {
+// PROFILE EDIT
+authRoutes.put('/profile/:id', (req, res, next) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
 
-  User.findByIdAndUpdate(req.params.id, req.body)
-    .then(() => {
-      res.json({ message: `Project with ${req.params.id} is updated successfully.` });
+  const {
+    username, password, passCheck, name, image, email,
+  } = req.body;
+
+  const salt = bcrypt.genSaltSync(10);
+  const hashPass = bcrypt.hashSync(password, salt);
+
+  if (username === '' || password === '' || passCheck === '') {
+    res.status(400).json({ message: 'Provide username and password' });
+    return;
+  }
+
+  if (passCheck !== password) {
+    res.status(400).json({ message: 'Provide password correct' });
+    return;
+  }
+
+  User.findOneAndUpdate({ _id: req.params.id }, {
+    $set: {
+      name, username, image, email, password: hashPass,
+    },
+  })
+    .then((response) => {
+      res.json({ message: `User with ${req.params.id} is updated successfully.` });
     })
     .catch((err) => {
       res.json(err);
     });
 });
 
-authRoutes.put('/upload/:id', (req, res, next) => {
+
+// DELETE route => to delete a specific project
+authRoutes.delete('/profile/:id', (req, res, next) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
 
-  User.findByIdAndUpdate(req.params.id, req.body)
+  User.findByIdAndRemove(req.params.id)
     .then(() => {
-      res.json({ message: `Project with ${req.params.id} is updated successfully.` });
+      res.json({ message: `User with ${req.params.id} is removed successfully.` });
     })
     .catch((err) => {
       res.json(err);
     });
 });
-
 
 module.exports = authRoutes;

@@ -43,7 +43,6 @@ class App extends Component {
   
   
 render() {
-  console.log(this.service)
   this.fetchUser()
   if(this.state.loggedInUser){
     return (
