@@ -31,7 +31,7 @@ const app = express();
 app.use(cors({
   // this could be multiple domains/origins, but we will allow just our React app
   credentials: true,
-  origin: ['http://localhost:3000'],
+  origin: ['http://localhost:3000', 'https://project-cars-app.herokuapp.com'],
 }));
 
 // Middleware Setup

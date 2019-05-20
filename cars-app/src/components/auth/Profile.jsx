@@ -9,7 +9,7 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      username: this.props.loggedInUser.username,
     }
   }
 
@@ -19,6 +19,7 @@ class Profile extends Component {
   }
 
   render() {
+    console.log(this.props.loggedInUser)
     return (
       <div>
         <h2>Username</h2>
@@ -30,11 +31,11 @@ class Profile extends Component {
               <div className="form-group">
                   <label>Name</label>
                   <div className="row">
-                  <label>{}</label>
+                  <label>{this.props.loggedInUser.username}</label>
                   <input type="text"
                     className="form-control" 
-                    name="name" 
-                    value={ this.state.name } 
+                    name="username" 
+                    value={this.state.username} 
                     onChange={ e => this.handleChange(e)} />
                   </div>
               </div>
