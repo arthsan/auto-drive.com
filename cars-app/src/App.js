@@ -9,6 +9,7 @@ import ProtectedRoute from './components/auth/protected-route';
 import AuthService from './components/auth/auth-service';
 import AddCar from './components/addcar/AddCar';
 import Footer from './components/footer/Footer'
+import Profile from './components/auth/Profile';
 
 // 
 class App extends Component {
@@ -50,6 +51,7 @@ render() {
         <Switch>
           <Route exact path='/' render={() => <Home user={this.state.loggedInUser} getUser={this.getTheUser}/>}/>
           <ProtectedRoute user={this.state.loggedInUser} path='/admin/addcar' component={AddCar} />
+          <ProtectedRoute user={this.state.loggedInUser} path='/profile/:id' component={Profile} />
         </Switch>
         <Footer />
       </div> 
