@@ -13,5 +13,12 @@ border: 1px solid red;
 
 .title-form{
   text-align: left;
-  margin-left: 19.5%;
+  margin-left: 20.5%;
+}
+
+.question-form {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  padding: 1%;
+  margin:2%;
 }
