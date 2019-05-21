@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const service = axios.create({
-  baseURL: `https://project-cars-app.herokuapp.com/api`,
+  baseURL: 'https://project-cars-app.herokuapp.com/api',
   // withCredentials: true // => you might need this when having the users in the app 
 });
 
