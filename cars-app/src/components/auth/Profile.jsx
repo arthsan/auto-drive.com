@@ -5,6 +5,7 @@ import service from '../../api/service';
 import { Redirect } from 'react-router-dom';
 
 import "../addcar/addcar.css"
+import AuthService from "./auth-service";
 
 class Profile extends Component {
   constructor(props) {
@@ -19,18 +20,21 @@ class Profile extends Component {
       passCheck: this.props.loggedInUser.passCheck,
       redirect: false,
     }
+    this.service = new AuthService();
   }
 
   handleFormSubmit = (event) => {
+    event.preventDefault();
     const name = this.state.name;
     const username = this.state.username;
     const password = this.state.password;
     const email = this.state.email;
     const image = this.state.image;
+    const passCheck = this.state.passCheck;
     const car = this.state.car;
-    event.preventDefault();
-    axios.put(`http://localhost:5000/auth/profile/${this.props.loggedInUser._id}`, { name, username, password, email, image, car })
-    .then(() => {
+    axios.put(`http://localhost:5000/auth/profile/${this.props.loggedInUser._id}`, { name, username, password, email, image, car, passCheck })
+    .then((response) => {
+      console.log('response', response)
       this.setState({redirect: !this.redirect})
     })
     .catch( error => console.log(error) )
@@ -54,6 +58,7 @@ class Profile extends Component {
   }
 
   render() {
+    console.log(this.props.match.params.id)
     if(this.state.redirect) {
       return(
       <Redirect to='/'/>

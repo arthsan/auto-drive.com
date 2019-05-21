@@ -116,7 +116,7 @@ authRoutes.put('/profile/:id', (req, res, next) => {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
-
+  console.log('req.body');
   const {
     username, password, passCheck, name, image, email,
   } = req.body;
@@ -124,15 +124,15 @@ authRoutes.put('/profile/:id', (req, res, next) => {
   const salt = bcrypt.genSaltSync(10);
   const hashPass = bcrypt.hashSync(password, salt);
 
-  if (username === '' || password === '' || passCheck === '' || email === '' || name === '') {
+  if (username === null || password === null || passCheck === null || email === null || name === null) {
     res.status(400).json({ message: 'Provide username and password' });
     return;
   }
 
-  if (passCheck !== password) {
-    res.status(400).json({ message: 'Provide password correct' });
-    return;
-  }
+  // if (passCheck !== password) {
+  //   res.status(400).json({ message: 'Provide password correct' });
+  //   return;
+  // }
 
   User.findOneAndUpdate({ _id: req.params.id }, {
     $set: {

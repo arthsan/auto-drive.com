@@ -30,10 +30,10 @@ class AuthService {
     .then(response => response.data)
   }
 
-  edit = (username, password, email, car, image, name) => {
-    return this.service.put('/profile/:id', {username, password, email, car, image, name})
-    .then(response => response.data)
-  }
+  // edit = (username, password, email, car, image, name) => {
+  //   return this.service.put(`/profile/${this.props.loggedInUser._id}`, {username, password, email, car, image, name})
+  //   .then(response => response.data)
+  // }
 
 }
 
