@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from '../starrating/StarRating';
 import './carpage.css'
+import Review from '../reviews/Review'
 
 const CarPage = (props) => {
   return (
@@ -56,6 +57,8 @@ const CarPage = (props) => {
           Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Mé faiz elementum girarzis, nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.
         </p>
       </div>
+      <h5>Reviews</h5>
+      <Review />
     </div>           
   )    
 }
