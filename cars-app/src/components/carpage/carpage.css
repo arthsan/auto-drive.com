@@ -1,0 +1,50 @@
+/* *{
+  border: 1px solid red;
+  margin: 0;
+} */
+
+.box-car{
+  display: flex;
+  align-items: flex-start;
+  margin: 1% 1% 0 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+
+
+}
+
+.box-car > div > img {
+margin: 2% 0 0 1%;
+}
+
+
+
+div > h4 {
+  text-align: left;
+  margin: 1% 0 0 3%;
+}
+
+.description-car{
+  padding: 1% 3%;
+  text-align: justify;
+}
+
+.itens-car{
+  display: flex;
+  align-items: flex-start;
+  margin: 1% 1% 0 1%;
+  text-align: center;
+}
+
+.itens-car > div {
+  width: 50%;
+}
+
+div > ul {
+  text-align: left;
+}
+
+div > h5 {
+  margin: 1% 0;
+
+}

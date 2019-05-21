@@ -12,6 +12,7 @@ import Footer from './components/footer/Footer'
 import Profile from './components/auth/Profile';
 import QuizForm from './components/quizform/QuizForm';
 import TableCars from './components/tablecars/TableCars';
+import CarPage from './components/carpage/Carpage';
 
 // 
 class App extends Component {
@@ -56,6 +57,7 @@ render() {
           <ProtectedRoute user={this.state.loggedInUser} path='/profile/:id' component={Profile} />
           <ProtectedRoute user={this.state.loggedInUser} path='/quizform' component={QuizForm} />
           <ProtectedRoute user={this.state.loggedInUser} path='/tablecars' component={TableCars} />
+          <ProtectedRoute user={this.state.loggedInUser} path='/carpage' component={CarPage} />
         </Switch>
         <Footer />
       </div> 
