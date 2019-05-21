@@ -124,7 +124,7 @@ authRoutes.put('/profile/:id', (req, res, next) => {
   const salt = bcrypt.genSaltSync(10);
   const hashPass = bcrypt.hashSync(password, salt);
 
-  if (username === '' || password === '' || passCheck === '') {
+  if (username === '' || password === '' || passCheck === '' || email === '' || name === '') {
     res.status(400).json({ message: 'Provide username and password' });
     return;
   }
