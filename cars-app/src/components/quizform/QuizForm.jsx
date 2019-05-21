@@ -15,35 +15,35 @@ class QuizForm extends Component {
               <input type="text" class="form-control" id="exampleFormControlQuestion1" name="answer1" placeholder="Answer" />
             </div>
             <div className="question-form">
-              <label className="label-form" for="question2">Quanto você pretende gastar por mês com manutenção do veículo?</label>
+              <label className="label-form" for="question2">Você faz questão de um carro 0km?</label>
               <input type="text" class="form-control" id="exampleFormControlQuestion2" name="answer2" placeholder="Answer" />
             </div>
             <div className="question-form">
-              <label className="label-form"  for="question3">Normalmente quantas pessoas utilizam o carro com você?</label>
+              <label className="label-form"  for="question3">Quanto você pretende gastar por mês com manutenção do veículo?</label>
               <input type="text" class="form-control" id="exampleFormControlQuestion3" name="answer3" placeholder="Answer" />
             </div>
             <div className="question-form">
-              <label className="label-form" for="question4">Faz viagens de carro? Anda em estradas de terra?</label>
+              <label className="label-form" for="question4">Faz viagens de carro? </label>
               <input type="text" class="form-control" id="exampleFormControlQuestion4" name="answer4" placeholder="Answer" />
             </div>
             <div className="question-form">
-              <label className="label-form"  for="question5">Qual finalidade do veículo? Esportivo/off-road/deslocamento p/ trabalho?</label>
+              <label className="label-form"  for="question5">Qual finalidade do veículo</label>
               <input type="text" class="form-control" id="exampleFormControlQuestion5" name="answer5" placeholder="Answer" />
             </div>
             <div className="question-form">
-              <label className="label-form"  for="question6"></label>
+              <label className="label-form"  for="question6">Você mora perto do trabalho?</label>
               <input type="text" class="form-control" id="exampleFormControlQuestion6" name="answer6" placeholder="Answer" />
             </div>
             <div className="question-form">
-              <label className="label-form"  for="question7">Question7</label>
+              <label className="label-form"  for="question7">Vai fazer viagens?</label>
               <input type="text" class="form-control" id="exampleFormControlQuestion7" name="answer7" placeholder="Answer" />
             </div>
             <div className="question-form">
-              <label className="label-form"  for="question8">Question8</label>
+              <label className="label-form"  for="question8">Anda em estradas de terra?</label>
               <input type="text" class="form-control" id="exampleFormControlQuestion8" name="answer8" placeholder="Answer" />
             </div>
             <div className="question-form">
-              <label className="label-form"  for="question9">Question9</label>
+              <label className="label-form"  for="question9">Qual a sua idade?</label>
               <input type="text" class="form-control" id="exampleFormControlQuestion9" name="answer9" placeholder="Answer" />
             </div>
             <div className="question-form">

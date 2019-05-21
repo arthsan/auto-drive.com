@@ -10,7 +10,8 @@ class Search extends Component {
       name: '',
       stocked: false,   
     }
-    this.handlerChange = this.handlerChange.bind(this);    
+    this.handlerChange = this.handlerChange.bind(this);  
+    this.handlerCheckBox = this.handlerCheckBox.bind(this);  
   }  
   
   handlerChange(event) {
@@ -21,6 +22,13 @@ class Search extends Component {
     // if(checkstock){
 
     // }    
+  }
+
+  handlerCheckBox(){
+    this.setState({
+        stocked: !this.state.stocked,
+    })  
+    this.props.SearchBar(this.state)
   }
   
   render() {

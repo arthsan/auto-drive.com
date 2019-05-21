@@ -11,6 +11,7 @@ class AddCar extends Component {
     this.state = {
       name: "",
       description:"",
+      text: "",
       imageUrl: "",
       model: "",
       brand: "",
@@ -18,6 +19,7 @@ class AddCar extends Component {
       category: "",
       rating: "",
       year: "",
+      used: "",
       price: "",
       ipva: "",
       insurance: "",
@@ -187,6 +189,15 @@ class AddCar extends Component {
                     onChange={ e => this.handleChange(e)} />
                 </div>
                 <div className="form-group">
+                  <label>Year</label>
+                  <input
+                    type="text" 
+                    className="form-control"
+                    name="used" 
+                    value={ this.state.used } 
+                    onChange={ e => this.handleChange(e)} />
+                </div>
+                <div className="form-group">
                 <label>Price</label>
                   <input
                     type="text" 
@@ -286,6 +297,15 @@ class AddCar extends Component {
                     className="form-control"
                     name="review" 
                     // value={ this.state.description } 
+                    onChange={ e => this.handleChange(e)} />
+                </div>
+                <div className="form-group">
+                <label>Review????</label>
+                  <input
+                    type="textarea" 
+                    className="form-control"
+                    name="text" 
+                    value={ this.state.text } 
                     onChange={ e => this.handleChange(e)} />
                 </div>
               </div>

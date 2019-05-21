@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Carrousel from './Carrousel';
 import MarketCard from './MarketCard';
-import Search from './Search'
 import AuthService from '../auth/auth-service';
 import Quiz from './Quiz'
+import FiltrableCars from './search/FiltrableCars';
 // import axios from 'axios';
 
 
@@ -25,7 +25,7 @@ class Home extends Component {
               <MarketCard />
             </div>
             <div>
-              <Search />
+              <FiltrableCars />
             </div>
             <div>
                 <Quiz />
@@ -42,7 +42,7 @@ class Home extends Component {
               <MarketCard />
             </div>
             <div>
-              <Search />
+              <FiltrableCars />
             </div>
         </div>
       )

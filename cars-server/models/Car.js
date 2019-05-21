@@ -8,6 +8,8 @@ const carSchema = new Schema({
   transmission: { type: String, enum: ['Automatic', 'Manual'] },
   category: String,
   imageUrl: String,
+  text: String,
+  used: { type: Boolean, default: false },
   rank: {
     rating: Number,
     year: Number,

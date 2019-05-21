@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const service = axios.create({
-  baseURL: `${process.env.REACT_APP_API_URL}/api`,
+  baseURL: `https://project-cars-app.herokuapp.com/api`,
   // withCredentials: true // => you might need this when having the users in the app 
 });
 
@@ -23,6 +23,12 @@ export default {
   saveNewCar(newCar) {
     console.log('new car is: ', newCar)
     return service.post('/cars/create', newCar)
+      .then(res => res.data)
+      .catch(errorHandler);
+  },
+
+  getAllCars() {
+    return service.get('/cars')
       .then(res => res.data)
       .catch(errorHandler);
   }
