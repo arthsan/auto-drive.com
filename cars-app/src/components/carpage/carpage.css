@@ -8,15 +8,15 @@
   /* display: flex; */
   /* align-items: flex-start; */
   margin: 1% 1% 0 1%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(209, 175, 175, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
-  
-  
+  /* border: 1px solid red; */
 }
+
 .img-car{
-  width: 450px;
+  width: 600px;
   max-width: 100%;
-  max-height: 351px;
+  max-height: 351px; 
 }
 
 .box-img{
@@ -59,3 +59,7 @@ div > ul {
 div > h5 {
   margin: 1% 0;
 }
+
+/* *{
+  border: 1px solid red;
+} */

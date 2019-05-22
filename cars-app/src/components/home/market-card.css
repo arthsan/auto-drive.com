@@ -5,19 +5,19 @@
 }
 
 .card-size {
-    width: 25%;
+    width: 30%;
     padding: 30px 10px 0 10px;
     border: 2px solid rgba(68, 162, 156, 0.623);
-    border-radius: 30px;
+    border-radius: 20px;
     background-color:  rgb(217, 228, 225);
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .card-img-top {
-    width: 60%;
-    margin-left: 20%;
+    width: 55%;
+    margin-left: 21%;
 }

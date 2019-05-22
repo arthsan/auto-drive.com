@@ -13,7 +13,6 @@ const CarPage = (props) => {
         </div>
         <div>
           <h3>{props.location.state.model}</h3>
-          <p>Mussum Ipsum, cacilds vidis litro abertis. Mé faiz elementum girarzis, nisi eros vermeio. Paisis, filhis, espiritis santis. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Sapien in monti palavris qui num significa nadis i pareci latim.</p>
           <h4>Review Project Cars</h4>
           <h4>Review Owners</h4>
           <div className='itens-car'>
