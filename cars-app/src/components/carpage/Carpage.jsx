@@ -18,7 +18,7 @@ const CarPage = (props) => {
           <div className='itens-car'>
             <div >
               <ul>
-                <li>abs: </li>
+                <li>abs: {props.location.state.abs ? "yes" : "no"}</li>
                 <li>parkSensor: </li>
                 <li>airBag: </li>
                 <li>fogLights:</li>

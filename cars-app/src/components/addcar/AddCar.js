@@ -189,15 +189,6 @@ class AddCar extends Component {
                     onChange={ e => this.handleChange(e)} />
                 </div>
                 <div className="form-group">
-                  <label>Year</label>
-                  <input
-                    type="text" 
-                    className="form-control"
-                    name="used" 
-                    value={ this.state.used } 
-                    onChange={ e => this.handleChange(e)} />
-                </div>
-                <div className="form-group">
                 <label>Price</label>
                   <input
                     type="text" 
@@ -300,7 +291,7 @@ class AddCar extends Component {
                     onChange={ e => this.handleChange(e)} />
                 </div>
                 <div className="form-group">
-                <label>Review????</label>
+                <label>Description Car</label>
                   <input
                     type="textarea" 
                     className="form-control"
@@ -319,6 +310,10 @@ class AddCar extends Component {
                 <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch1" className="custom-control-input" name='abs' onChange={e => this.handleSwitch(e)} />
                   <label className="custom-control-label" htmlFor="customSwitch1">ABS</label>
+                </div>
+                <div className="switches custom-control custom-switch">
+                  <input type="checkbox" id="customSwitchUsed" className="custom-control-input" name='used' onChange={e => this.handleSwitch(e)} />
+                  <label className="custom-control-label" htmlFor="customSwitchUsed">Used</label>
                 </div>
                 <div className="switches custom-control custom-switch">
                   <input type="checkbox" id="customSwitch2" className="custom-control-input" name='parkSensor' onChange={e => this.handleSwitch(e)} />
