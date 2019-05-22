@@ -147,7 +147,6 @@ authRoutes.put('/profile/:id', (req, res, next) => {
     });
 });
 
-
 // DELETE route => to delete a specific project
 authRoutes.delete('/profile/:id', (req, res, next) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {

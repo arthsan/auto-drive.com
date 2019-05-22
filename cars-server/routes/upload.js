@@ -1,6 +1,8 @@
 // const mongoose = require('mongoose');
 const express = require('express');
 
+const User = require('../models/User');
+
 const router = express.Router();
 
 const Quiz = require('../models/Quiz');
@@ -81,9 +83,11 @@ router.post('/api/cars/create', (req, res, next) => {
 });
 
 router.post('/api/quizform', (req, res, next) => {
+  console.log('entrou no post')
   const newQuiz = new Quiz(
     {
       // affinity: req.body,
+      user: req.body.user,
       q1: req.body.q1,
       q2: req.body.q2,
       q3: req.body.q3,
@@ -102,6 +106,16 @@ router.post('/api/quizform', (req, res, next) => {
     })
     .catch((err) => {
       res.json(err);
+    });
+});
+
+router.patch('/api/user-update/:id', (req, res, next )=> {
+  User.findOneAndUpdate({ _id: req.params.id }, { quiz: req.body.quizId })
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
     });
 });
 

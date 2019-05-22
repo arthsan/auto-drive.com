@@ -29,13 +29,25 @@ export default {
 
   saveNewQuiz(newQuiz) {
     console.log('new quiz is : ', newQuiz)
-    return service.post('/quizform')
+    return service.post('/quizform', newQuiz)
       .then(res => res.data)
       .catch(errorHandler);
   },
 
+  editUser(userId, quizId) {
+    return service.patch(`/user-update/${userId}`, { quizId })
+      .then(res => res.data)
+      .catch(errorHandler)
+  },
+
   getAllCars() {
     return service.get('/cars')
+      .then(res => res.data)
+      .catch(errorHandler);
+  },
+
+  getQuiz(userId, quizId) {
+    return service.get(`quiz/${userId}`, { quizId })
       .then(res => res.data)
       .catch(errorHandler);
   }

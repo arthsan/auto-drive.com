@@ -1,5 +1,4 @@
 import React from 'react';
-import StarRating from '../starrating/StarRating';
 import './carpage.css'
 import Review from '../reviews/Review'
 
@@ -9,7 +8,7 @@ const CarPage = (props) => {
     <div>
       <div className="box-car">
         <div className="box-img">
-          <img className="img-car" src={props.location.state.imageUrl}  alt="photo" />
+          <img className="img-car" src={props.location.state.imageUrl}  alt="carphoto" />
         </div>
         <div>
           <h3>{props.location.state.model}</h3>

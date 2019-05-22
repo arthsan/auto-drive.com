@@ -13,6 +13,7 @@ import Profile from './components/auth/Profile';
 import QuizForm from './components/quizform/QuizForm';
 import TableCars from './components/tablecars/TableCars';
 import CarPage from './components/carpage/Carpage';
+import BestCar from './components/bestcar/BestCar';
 
 // 
 class App extends Component {
@@ -63,6 +64,7 @@ render() {
           <ProtectedRoute user={this.state.loggedInUser} path='/quizform' component={QuizForm} />
           <ProtectedRoute setCarInfo={this.setCarInfo} user={this.state.loggedInUser} path='/tablecars' component={TableCars} />
           <ProtectedRoute carInfo={this.state.carInfo} user={this.state.loggedInUser} path='/carpage' component={CarPage} />
+          <ProtectedRoute carInfo={this.state.carInfo} user={this.state.loggedInUser} path='/bestcars' component={BestCar} />
         </Switch>
         <Footer />
       </div> 

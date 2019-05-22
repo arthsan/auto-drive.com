@@ -4,10 +4,11 @@ const { Schema } = mongoose;
 
 const quizSchema = new Schema({
   affinity: Number,
+  user: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   q1: Number,
   q2: { type: Boolean, default: false },
   q3: Number,
-  q4: { type: Boolean, default: false },
+  q4: { type: String, enum: ['Work', 'Entertainment', 'Security'] },
   q5: { type: Boolean, default: false },
   q6: { type: Boolean, default: false },
   q7: { type: Boolean, default: false },

@@ -1,5 +1,4 @@
 import React from 'react';
-import StarRating from '../starrating/StarRating';
 import './review.css'
 
 const Review = (props) => {

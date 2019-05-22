@@ -1,21 +1,36 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import './tablecars.css'
+import service from '../../api/service'
 
-class TableCars extends Component {
+class BestCar extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      cars: [],
+    }
+    this.service = service;
   }
 
-  clickCar = (carInfo) => {
-    this.props.setCarInfo('teste', carInfo)
+  filterCars(arr){
+   return arr.filter((element) => element.rank.price <= 70000)
+  }
+
+  componentDidMount() {
+    this.service.getAllCars()
+    .then(response => {
+      console.log('@@@@@@@@@',response)
+      const cars = this.filterCars(response)
+      console.log(cars)
+      this.setState({ cars: cars })
+    })
   }
   
+
   render () {  
     return (
       <div class="card mb-3">
         {
-          this.props.carsList.map((element,idx) =>{
+          this.state.cars.map((element,idx) =>{
             return (
               <div key={idx} class="row no-gutters row-car">
                 <div class="col-md-4">
@@ -40,4 +55,4 @@ class TableCars extends Component {
   }
 }
 
-export default TableCars;
+export default BestCar;

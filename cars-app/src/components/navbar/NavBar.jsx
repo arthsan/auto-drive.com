@@ -33,6 +33,7 @@ class NavBar extends Component {
           <div>
           <div className="dropdown">
             <Link to='/admin/addcar'><button className="btn btn-dark add-car" >Add Car</button></Link>
+            <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car" >Best Cars</button></Link>
             <a className="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src={this.state.loggedInUser.image}/>
               {this.state.loggedInUser.name}
             </a>
@@ -54,6 +55,7 @@ class NavBar extends Component {
         <nav className="nav justify-content-between nav-style">
           <h1 className='adjust logo'><Link to='/'>PROJECT CARS</Link></h1>
           <div className='adjust row'>
+            <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car" >Best Cars</button></Link>
             <div className="dropdown">
             <a className="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {this.state.loggedInUser.username}

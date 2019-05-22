@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Search from './Search'
 import TableCars from '../../tablecars/TableCars';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 import service from '../../../api/service';
 
 class FiltrableCars extends Component{
@@ -24,7 +22,7 @@ class FiltrableCars extends Component{
   
   seachCarHandler(name) {
     this.service.getAllCars()
-      .then(res => {
+    .then(res => {
         if (name.length === 0) {
           this.setState({
             cars: [],
