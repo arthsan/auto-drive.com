@@ -4,6 +4,7 @@ import service from '../../api/service';
 
 import './quizform.css'
 
+
 class QuizForm extends Component {
   constructor(props){
     super(props);
@@ -19,7 +20,12 @@ class QuizForm extends Component {
       q8: '',
       q9: '', 
       redirect: false,
-    };
+    }
+  }
+  
+  handleChange = e => {  
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit = e => {
@@ -52,9 +58,13 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>Qual o valor/quantia disponível para compra?</h5>
               <section> 
-                <b>R$ 0</b> <input value={this.state.q1} id="range-slider-demo" type="text" class="span2" value="" 
-                data-slider-min="50" data-slider-max="10000" data-slider-step="500" 
-                data-slider-value="[1500,5000]"/> <b>R$ 200.000</b>
+                <b>R$ 0</b> 
+                <input id="range-slider-demo" type="text" class="span2"
+                  data-slider-min="50" data-slider-max="10000" data-slider-step="500" 
+                  data-slider-value="[1500,5000]"
+                  value={ this.state.q1 }
+                  onChange={ e => this.handleChange(e)}/>
+                <b>R$ 200.000</b>
               </section>
             </div>
           </div>
@@ -63,11 +73,15 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>Tem preferência por carro novo?</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" 
+                  value={ this.state.q2 }
+                  onChange={ e => this.handleChange(e)}/>
                 <label class="form-check-label" for="inlineRadio1">Yes</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" 
+                  value={ this.state.q2 }
+                  onChange={ e => this.handleChange(e)}/>
                 <label class="form-check-label" for="inlineRadio2">No</label>
               </div>
             </div>
@@ -85,19 +99,25 @@ class QuizForm extends Component {
           </div>
           {/* QUESTION 4  */}
           <div className="form-group container-form">
-            <div class="btn-group question-form">
+            <div class="question-form">
               <h5>Qual finalidade do veículo?</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                <label class="form-check-label" for="inlineRadio1">Trabalho</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" 
+                  value={ this.state.q4 }
+                  onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio3">Trabalho</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
-                <label class="form-check-label" for="inlineRadio2">Lazer</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio4" 
+                  value={ this.state.q4 }
+                  onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio4">Lazer</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
-                <label class="form-check-label" for="inlineRadio2">Segurança</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio5" 
+                  value={ this.state.q4 }
+                  onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio5">Segurança</label>
               </div>
             </div>
           </div>
@@ -106,12 +126,16 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>Faz viagens de carro ?</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio6" 
+                value={ this.state.q5 }
+                onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio6">Yes</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
-                <label class="form-check-label" for="inlineRadio2">No</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio7" 
+                value={ this.state.q5 }
+                onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio7">No</label>
               </div>
             </div>
           </section>
@@ -120,12 +144,16 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>Você mora perto do trabalho?</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio8" 
+                value={ this.state.q6 }
+                onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio8">Yes</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
-                <label class="form-check-label" for="inlineRadio2">No</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio9" 
+                value={ this.state.q6 }
+                onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio9">No</label>
               </div>
             </div>
           </section>
@@ -134,12 +162,16 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>Você faz viagens regularmente?</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio10" 
+                value={ this.state.q7 }
+                onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio10">Yes</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
-                <label class="form-check-label" for="inlineRadio2">No</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio11" 
+                value={ this.state.q7 }
+                onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio11">No</label>
               </div>
             </div>
           </section>
@@ -148,12 +180,16 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>Anda em estradas de terra?</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio12" 
+                value={ this.state.q8 }
+                onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio12">Yes</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
-                <label class="form-check-label" for="inlineRadio2">No</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions13" id="inlineRadio13" 
+                value={ this.state.q8 }
+                onChange={ e => this.handleChange(e)}/>
+                <label class="form-check-label" for="inlineRadio13">No</label>
               </div>
             </div>
           </section>
