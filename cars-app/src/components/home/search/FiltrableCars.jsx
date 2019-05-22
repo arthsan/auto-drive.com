@@ -14,8 +14,6 @@ class FiltrableCars extends Component{
     }
     this.service = service;
     this.seachCarHandler = this.seachCarHandler.bind(this);
-//   console.log(data)
-
   }
 
   carList() {
@@ -27,41 +25,31 @@ class FiltrableCars extends Component{
   componentDidMount() {
     this.service.getAllCars()
     .then(response => {
-        console.log(response)
-        this.setState({cars: response, renderCars: true})
+      this.setState({ cars: response, renderCars: true })
     })
   }
   
-  seachCarHandler(OneCar) {
-    const productCopy = [...this.data];  
-    let onStock =[];
-     if(!OneCar.stocked){
-       onStock = productCopy.filter(e =>
-        e.stocked        
-       );                  
-     }else{
-        onStock = productCopy;
-     }
-    const searchedProduct = onStock.filter(e =>
-        e.name.toLowerCase().includes(OneCar.name.toLowerCase())        
-    );    
-    this.setState({
-      products: searchedProduct,
-    })
+  seachCarHandler(name) {
+    this.service.getAllCars()
+      .then(res => {
+        const filterCar = res.filter((e) => e.model.toLowerCase().includes(name.toLowerCase()))
+        this.setState({ cars: filterCar })
+      })
+      .catch(error => console.log(error))
   }
 
-    render(){
-        if (this.state.renderCars) {
-            return (
-                <div>
-                    <Search SearchBar= {this.seachCarHandler}/>
-                    <TableCars carsList={this.state.cars} />
-                </div>
-            );  
-        } else {
-            return null;
-        }
-    }  
+  render() {
+    if (this.state.renderCars) {
+      return (
+        <div>
+          <Search SearchBar= {this.seachCarHandler}/>
+          <TableCars setCarInfo={this.props.setCarInfo} carsList={this.state.cars} />
+        </div>
+      );  
+    } else {
+    return null;
+    }
+  }  
 }
 
 export default FiltrableCars;

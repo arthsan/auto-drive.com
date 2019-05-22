@@ -25,7 +25,7 @@ class Home extends Component {
               <MarketCard />
             </div>
             <div>
-              <FiltrableCars />
+              <FiltrableCars setCarInfo={this.props.setCarInfo} />
             </div>
             <div>
                 <Quiz />

@@ -18,7 +18,7 @@ import CarPage from './components/carpage/Carpage';
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = { loggedInUser: null };
+    this.state = { loggedInUser: null , carInfo: null };
     this.service = new AuthService();
   }
   
@@ -43,7 +43,11 @@ class App extends Component {
       loggedInUser: userObj
     })
   }
-  
+
+  setCarInfo = (carInfo) => {
+    this.setState({ 
+      carInfo: carInfo })
+  }  
   
 render() {
   this.fetchUser()
@@ -52,12 +56,12 @@ render() {
       <div className="App">
       <NavBar getUser={this.getTheUser} user={this.state.loggedInUser} />
         <Switch>
-          <Route exact path='/' render={() => <Home user={this.state.loggedInUser} getUser={this.getTheUser}/>}/>
+          <Route exact path='/' render={() => <Home setCarInfo={this.setCarInfo} user={this.state.loggedInUser} carInfo={this.state.carInfo} getUser={this.getTheUser}/>}/>
           <ProtectedRoute user={this.state.loggedInUser} path='/admin/addcar' component={AddCar} />
           <ProtectedRoute user={this.state.loggedInUser} path='/profile/:id' component={Profile} />
           <ProtectedRoute user={this.state.loggedInUser} path='/quizform' component={QuizForm} />
-          <ProtectedRoute user={this.state.loggedInUser} path='/tablecars' component={TableCars} />
-          <ProtectedRoute user={this.state.loggedInUser} path='/carpage' component={CarPage} />
+          <ProtectedRoute setCarInfo={this.setCarInfo} user={this.state.loggedInUser} path='/tablecars' component={TableCars} />
+          <ProtectedRoute carInfo={this.state.carInfo} user={this.state.loggedInUser} path='/carpage' component={CarPage} />
         </Switch>
         <Footer />
       </div> 
