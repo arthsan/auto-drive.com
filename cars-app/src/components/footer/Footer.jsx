@@ -4,13 +4,16 @@ import './footer.css'
 const Footer = (props) => {
   return (
     <div className="footer">
+      {/* <h5>About</h5> */}
 
-      {/* <a  href="https://github.com/arthsan/project-cars">
-        <img alt="github" href="https://res.cloudinary.com/dqtp9um44/image/upload/v1558494063/githublogo_hqr5p2.png"/>
-      </a> */}
+      <a  href="https://github.com/arthsan/project-cars">
+      </a>
+      <p class="copyright">Company Name © 2019</p>
       
     </div> 
   )    
 }
 
 export default Footer;
+
+

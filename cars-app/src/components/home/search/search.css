@@ -1,14 +1,31 @@
-.search-bar {
-    font-size: 50px;
+.search-row > h6{
+    font-size: 40px;
     color: white;
-    margin: 50px;
+    padding-top: 80px;
 }
 
-.bg-mercedes {
-    background-color: rgb(56, 133, 127);
+.search-row {
+    background-color: rgba(56, 133, 127);
+    /* filter: blur(5px); */
     margin-bottom: 0 !important;
-}
+    height: 380px;
+    /* background-image: url('https://res.cloudinary.com/dqtp9um44/image/upload/v1558564987/cars/56248_DREAM_CARS_dv5ju9.jpg'); */
+    background-position: center;
+    border: 1px solid rgba(56, 133, 127);
 
-.search-tag {
+  }
+  
+  .search-tag {
     margin: 75px;
-}
+  }
+  
+  .search{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    
+  }
+  /* 
+  *{
+    border: 1px solid red;
+  } */

@@ -27,57 +27,49 @@ class NavBar extends Component {
     if(this.state.loggedInUser.role === 'ADMIN') {
     return (
       <div>
-      <nav className="nav justify-content-between nav-style">
-        <h1 className='adjust logo'><Link to='/'>PROJECT CARS</Link></h1>
-        <div className='adjust row'>
-          <div>
-          <div className="dropdown">
-            <Link to='/admin/addcar'><button className="btn btn-dark add-car" >Add Car</button></Link>
-            <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car" >Best Cars</button></Link>
-            <a className="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src={this.state.loggedInUser.image}/>
+        <nav className="navbar navbar-dark bg-dark">
+          <h3 className='logo'><Link to='/'>Project Cars</Link></h3>
+          <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car" >Best Cars</button></Link>
+            <div>
               {this.state.loggedInUser.name}
-            </a>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="dropdown-item btn btn-dark">Profile</button>
+              <div className="links">
+              <Link to='/admin/addcar'><button className="btn btn-dark add-car" >Add Car</button></Link>
+              <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="btn btn-dark add-car">Profile</button>
               </Link>
-              <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
+              <Link to='/'><button type="button" className="btn btn-dark add-car" onClick={() => this.logoutUser()}>Logout</button>
               </Link>
             </div>
-          </div>
-          </div>
-        </div>
-      </nav>
+            </div>
+        </nav>
       </div>
     )
     } else {
       return (
         <div>
-        <nav className="nav justify-content-between nav-style">
-          <h1 className='adjust logo'><Link to='/'>PROJECT CARS</Link></h1>
-          <div className='adjust row'>
-            <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car" >Best Cars</button></Link>
-            <div className="dropdown">
-            <a className="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {this.state.loggedInUser.username}
-            </a>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="dropdown-item btn btn-dark">Profile</button>
-              </Link>
-              <Link to='/'><button type="button" className="dropdown-item btn btn-dark" onClick={() => this.logoutUser()}>Logout</button>
-              </Link>
-            </div>
-          </div>
-          </div>
-        </nav>
+          <nav className="navbar navbar-dark bg-dark">
+          <h3 className='logo'><Link to='/'>Project Cars</Link></h3>
+                <div>
+                <a className="btn btn-dark" href="#" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                  {this.state.loggedInUser.username}
+                </a>
+                <div className="links">
+                <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car" >Best Cars</button></Link>
+                  <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="btn btn-dark add-car">Profile</button>
+                  </Link>
+                  <Link to='/'><button type="button" className="btn btn-dark add-car" onClick={() => this.logoutUser()}>Logout</button>
+                  </Link>
+                </div>
+                </div>
+          </nav>
         </div>
       )
     }
   } else {
     return (
       <div>
-        <nav className="nav justify-content-between nav-style">
-          <h1 className='adjust logo'><Link to='/'>PROJECT CARS</Link></h1>
-          <div className='row adjust'>
+        <nav className="navbar navbar-dark bg-dark">
+        <h3 className='logo'><Link to='/'>Project Cars</Link></h3>
+          <div className='links'>
           <div><Link to='/login'><button type="button" className="btn btn-dark">Login</button></Link></div>
           <div><Link to='/signup'><button type="button" className="btn btn-dark">Signup</button></Link></div>
           </div>
