@@ -1,18 +1,27 @@
-/* .adjust > div {
-  margin: 20px 10px;
+/* *{
+  border: 1px solid red;
 } */
 
 .add-car {
   margin-right: 20px;
 }
-.nav {
-  margin: 10px;
-}
-
-.logo > a{
-
-}
 
 .dropdown{
   margin: 5px 20px 0 0;
+}
+
+.navbar {
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+}
+
+.user{
+  color:whitesmoke;
+}
+
+.button {
+}
+
+.links {
+  display: flex;
+  align-items: flex-end;
 }

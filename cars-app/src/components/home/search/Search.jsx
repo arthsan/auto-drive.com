@@ -22,11 +22,11 @@ class Search extends Component {
   
   render() {
     return (
-      <div className='p-3 mb-2 bg-mercedes text-white'>
-          <h3 className='search-bar'>Search for vehicle</h3>
+      <div className="search-row">
+        <div className="image-back"></div>
+        <h6>Search for vehicle</h6>
         <div className="search-container search-tag">        
-          <label>Enter car's name:</label>
-          <input type="text" name="name" value={this.state.model} onChange={(e)=> this.handlerChange(e)}></input>
+          <input className="search" type="text" name="name" value={this.state.model} onChange={(e)=> this.handlerChange(e)}></input>
         </div>
       </div>
     )  

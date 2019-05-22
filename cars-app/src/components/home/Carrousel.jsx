@@ -3,7 +3,7 @@ import './carrousel.css'
 
 const Carrousel = (props) => {
   return (
-    <div className="bd-example car">
+    <div className="carousel slide">
       <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
           <ol className="carousel-indicators">
           <li data-target="#carouselExampleCaptions" data-slide-to="0" className="active"></li>
@@ -11,27 +11,34 @@ const Carrousel = (props) => {
           <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
           </ol>
           <div className="carousel-inner">
-          <div className="carousel-item active">
-              <img src="https://pontoon-e.com/wp-content/uploads/2018/05/pexels-photo-241316-1920x1080.jpeg" className="d-block w-100" alt="porshe" />
-              <div className="carousel-caption d-none d-md-block">
-              <h5>We help you to choose your new veichle</h5>
-              <p>Have you ever thought driving a Porshe?</p>
-              </div>
-          </div>
-          <div className="carousel-item">
-              <img src="https://images.wallpaperscraft.com/image/honda_civic_turbo_sports_car_113816_1920x1080.jpg" className="d-block w-100" alt="lambo" />
-              <div className="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-          </div>
-          <div className="carousel-item">
-              <img src="http://www.hdcarwallpapers.com/download/nissan_kicks_concept-1920x1080.jpg" className="d-block w-100" alt="bugati" />
-              <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </div>
-          </div>
+
+            <div className="carousel-item active">
+                <img src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558564222/cars/amg_ku8zsa.jpg" className="d-block w-100 img-one" alt="amg" />
+                <div class="carousel-caption">
+                  <h1>Example headline.</h1>
+                  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+                </div>
+            </div>
+
+            <div className="carousel-item">
+                <img src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558564444/cars/civic-carrousel_tofwsn.jpg" className="d-block w-100" alt="civic" />
+                <div class="carousel-caption">
+                  <h1>Example headline.</h1>
+                  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+                </div>
+            </div>
+
+            <div className="carousel-item">
+                <img src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558564567/cars/kickscarousel_iaxdrw.jpg" className="d-block w-100" alt="kicks" />
+                <div class="carousel-caption">
+                  <h1>Example headline.</h1>
+                  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+                </div>
+            </div>
+
           </div>
           <a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
