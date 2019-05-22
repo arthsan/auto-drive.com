@@ -1,37 +1,58 @@
 import React, { Component } from 'react';
-
+import { Redirect } from 'react-router-dom';
+import service from '../../api/service';
 
 import './quizform.css'
 
 class QuizForm extends Component {
-  // constructor(props){
-  //   super(props);
-  //   this.state = { 
-  //     x: '',
-  //     y: '',
-  //     z: false, 
-  //   };
-  // }
+  constructor(props){
+    super(props);
+    this.state = { 
+      // affinity: 0,
+      q1: '',
+      q2: '',
+      q3: '',
+      q4: '',
+      q5: '',
+      q6: '',
+      q7: '',
+      q8: '',
+      q9: '', 
+      redirect: false,
+    };
+  }
 
-  // handleFormSubmit = (event) => {
-  //   event.preventDefault();
-  //  const = "";
-  //   .then( response => {
-  //   })
-  //   .catch( error => console.log(error) )
-  // }
+  handleSubmit = e => {
+    e.preventDefault();
+    service.saveNewQuiz(this.state)
+    .then(res => {
+        console.log('added: ', res);
+        this.setState({
+          redirect: !this.state.redirect,
+        })
+        // here you would redirect to some other page 
+    })
+    .catch(err => {
+        console.log("Error while adding the thing: ", err);
+    });
+  }  
 
-  render(){
+  render() {
+    if(this.state.redirect) {
+      return(
+        <Redirect to='/' />
+      )
+    }
     return (
       <div>
         <h2 className="title-form">Simulation</h2>
-        <form>
+        <form onSubmit={e => this.handleSubmit(e)}>
           {/* QUESTION 1  */}
           <div className="form-group container-form">
             <div className="question-form">
               <h5>Qual o valor/quantia disponível para compra?</h5>
               <section> 
-                <b>R$ 0</b> <input id="range-slider-demo" type="text" class="span2" value="" 
+                <b>R$ 0</b> <input value={this.state.q1} id="range-slider-demo" type="text" class="span2" value="" 
                 data-slider-min="50" data-slider-max="10000" data-slider-step="500" 
                 data-slider-value="[1500,5000]"/> <b>R$ 200.000</b>
               </section>
@@ -147,7 +168,7 @@ class QuizForm extends Component {
               </div>
             </div>
           </section>
-          <button type="button" class="btn btn-secondary">Send</button>
+          <button type="submit" class="btn btn-secondary">Send</button>
         </form>
       </div>
     );

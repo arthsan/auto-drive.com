@@ -18,6 +18,7 @@ import CarPage from './components/carpage/Carpage';
 class App extends Component {
   constructor(props){
     super(props)
+    this.scrolled = true;
     this.state = { loggedInUser: null , carInfo: null };
     this.service = new AuthService();
   }
@@ -48,7 +49,7 @@ class App extends Component {
     this.setState({ 
       carInfo: carInfo })
   }  
-  
+
 render() {
   this.fetchUser()
   if(this.state.loggedInUser){
