@@ -8,8 +8,8 @@ const CarPage = (props) => {
   return (
     <div>
       <div className="box-car">
-        <div>
-          <img src={props.location.state.imageUrl} className="" alt="porshe" />
+        <div className="box-img">
+          <img className="img-car" src={props.location.state.imageUrl}  alt="photo" />
         </div>
         <div>
           <h3>{props.location.state.model}</h3>
@@ -19,7 +19,7 @@ const CarPage = (props) => {
           <div className='itens-car'>
             <div >
               <ul>
-                <li>abs: {0}</li>
+                <li>abs: </li>
                 <li>parkSensor: </li>
                 <li>airBag: </li>
                 <li>fogLights:</li>
@@ -49,16 +49,12 @@ const CarPage = (props) => {
         </div>
       </div>
       <div className="description-car">
-
         <h5>{props.location.state.model}</h5>
-        <p>Mussum Ipsum, cacilds vidis litro abertis. Copo furadis é disculpa de bebadis, arcu quam euismod magna. A ordem dos tratores não altera o pão duris. In elementis mé pra quem é amistosis quis leo. Quem num gosta di mim que vai caçá sua turmis! Manduma pindureta quium dia nois paga. Aenean aliquam molestie leo, vitae iaculis nisl. Diuretics paradis num copo é motivis de denguis. Viva Forevis aptent taciti sociosqu ad litora torquent.
-          Atirei o pau no gatis, per gatis num morreus. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.
-          Sapien in monti palavris qui num significa nadis i pareci latim. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Si num tem leite então bota uma pinga aí cumpadi! Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
-          Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Mé faiz elementum girarzis, nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.
-        </p>
+        <p>{props.location.state.text}</p>
       </div>
       <h5>Reviews</h5>
       <Review />
+      
     </div>           
   )    
 }
