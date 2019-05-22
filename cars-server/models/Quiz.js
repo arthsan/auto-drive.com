@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const quizSchema = new Schema({
-  rate: Number,
+  affinity: Number,
   q1: Number,
   q2: { type: Boolean, default: false },
   q3: Number,
@@ -15,5 +15,5 @@ const quizSchema = new Schema({
   q9: { type: Boolean, default: false },
 });
 
-const Quiz = mongoose.model('Review', quizSchema);
+const Quiz = mongoose.model('Quiz', quizSchema);
 module.exports = Quiz;

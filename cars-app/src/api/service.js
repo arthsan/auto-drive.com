@@ -27,6 +27,13 @@ export default {
       .catch(errorHandler);
   },
 
+  saveNewQuiz(newQuiz) {
+    console.log('new quiz is : ', newQuiz)
+    return service.post('/quizform')
+      .then(res => res.data)
+      .catch(errorHandler);
+  },
+
   getAllCars() {
     return service.get('/cars')
       .then(res => res.data)

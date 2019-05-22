@@ -3,9 +3,9 @@ const express = require('express');
 
 const router = express.Router();
 
+const Quiz = require('../models/Quiz');
 
 const Upload = require('../models/Car');
-
 
 // GET ROUTE
 router.get('/api/cars', (req, res, next) => {
@@ -17,7 +17,7 @@ router.get('/api/cars', (req, res, next) => {
 });
 
 // POST route => to create a new project
-router.post('/api/cars/create', (req, res, next)=> {
+router.post('/api/cars/create', (req, res, next) => {
   const newCar = new Upload(
     {
       imageUrl: req.body.imageUrl,
@@ -80,5 +80,29 @@ router.post('/api/cars/create', (req, res, next)=> {
     });
 });
 
+router.post('/api/quizform', (req, res, next) => {
+  const newQuiz = new Quiz(
+    {
+      // affinity: req.body,
+      q1: req.body.q1,
+      q2: req.body.q2,
+      q3: req.body.q3,
+      q4: req.body.q4,
+      q5: req.body.q5,
+      q6: req.body.q6,
+      q7: req.body.q7,
+      q8: req.body.q8,
+      q9: req.body.q9,
+    },
+  );
+
+  newQuiz.save()
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
 
 module.exports = router;
