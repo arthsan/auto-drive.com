@@ -42,20 +42,24 @@ class QuizForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    service.saveNewQuiz(this.state)
-    .then(res => {
-      console.log(res)
-        service.editUser(this.props.loggedInUser._id, res._id)
-          .then(() => {
-            this.setState({
-              redirect: !this.state.redirect,
+    if(this.props.loggedInUser.quiz){
+      service.saveNewQuiz(this.state)
+      .then(res => {
+        console.log(res)
+          service.editUser(this.props.loggedInUser._id, res._id)
+            .then(() => {
+              this.setState({
+                redirect: !this.state.redirect,
+              })
             })
-          })
-        // here you would redirect to some other page 
-    })
-    .catch(err => {
-        console.log("Error while adding the thing: ", err);
-    });
+          // here you would redirect to some other page 
+      })
+      .catch(err => {
+          console.log("Error while adding the thing: ", err);
+      });
+    } else {
+      
+    }
   }  
 
   render() {
@@ -104,7 +108,7 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>How much would you like pay for maintenance per month?</h5>
               <section> 
-                <b>R$ 0</b> <input id="range-slider-demo" type="number" class="span2" name="q3" value={this.state.q3} onChange={ e => this.handleChange(e)}/> <b>R$ 5.000</b>
+                <b>R$ 300</b> <input id="range-slider-demo" type="number" class="span2" name="q3" value={this.state.q3} onChange={ e => this.handleChange(e)}/> <b>R$ 3.000</b>
               </section>
             </div>
           </div>

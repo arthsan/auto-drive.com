@@ -82,8 +82,18 @@ router.post('/api/cars/create', (req, res, next) => {
     });
 });
 
+router.get('/api/quiz/:id', (req, res, next) => {
+  console.log(req.params.id)
+  Quiz.findOne({ user: req.params.id })
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+});
+
 router.post('/api/quizform', (req, res, next) => {
-  console.log('entrou no post')
   const newQuiz = new Quiz(
     {
       // affinity: req.body,
