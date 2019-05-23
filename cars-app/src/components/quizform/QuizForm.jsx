@@ -42,7 +42,7 @@ class QuizForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    if(this.props.loggedInUser.quiz){
+    if(this.props.loggedInUser.quiz.length < 0){
       service.saveNewQuiz(this.state)
       .then(res => {
         console.log(res)
@@ -58,7 +58,13 @@ class QuizForm extends Component {
           console.log("Error while adding the thing: ", err);
       });
     } else {
-      
+      service.editQuiz(this.state)
+      .then(res => {
+        console.log(res)
+        this.setState({
+          redirect: !this.state.redirect
+        })
+      })
     }
   }  
 

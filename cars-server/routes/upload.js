@@ -1,7 +1,9 @@
 // const mongoose = require('mongoose');
 const express = require('express');
+const mongoose = require('mongoose');
 
 const User = require('../models/User');
+
 
 const router = express.Router();
 
@@ -82,14 +84,38 @@ router.post('/api/cars/create', (req, res, next) => {
     });
 });
 
+
+// QUIZ FORM
 router.get('/api/quiz/:id', (req, res, next) => {
-  console.log(req.params.id)
+  console.log(req.params.id);
   Quiz.findOne({ user: req.params.id })
     .then((response) => {
       res.status(200).json(response);
     })
     .catch((err) => {
       res.status(400).json(err);
+    });
+});
+
+router.put('/api/quiz/:id', (req, res, next) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Specified id is not valid' });
+    return;
+  }
+  const {
+    q1, q2, q3, q4, q5, q6, q7, q8, q9,
+  } = req.body;
+
+  Quiz.findOneAndUpdate({ _id: req.params.id }, {
+    $set: {
+      q1, q2, q3, q4, q5, q6, q7, q8, q9,
+    },
+  })
+    .then((response) => {
+      res.json({ message: `User with ${req.params.id} is updated successfully.` });
+    })
+    .catch((err) => {
+      res.json(err);
     });
 });
 
@@ -119,7 +145,7 @@ router.post('/api/quizform', (req, res, next) => {
     });
 });
 
-router.patch('/api/user-update/:id', (req, res, next )=> {
+router.patch('/api/user-update/:id', (req, res, next) => {
   User.findOneAndUpdate({ _id: req.params.id }, { quiz: req.body.quizId })
     .then((response) => {
       res.status(200).json(response);
