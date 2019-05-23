@@ -13,7 +13,7 @@ const quizSchema = new Schema({
   q6: { type: Boolean, default: false },
   q7: { type: Boolean, default: false },
   q8: { type: Boolean, default: false },
-  q9: { type: Boolean, default: false },
+  q9: Number,
 });
 
 const Quiz = mongoose.model('Quiz', quizSchema);

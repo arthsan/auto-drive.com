@@ -46,8 +46,9 @@ export default {
       .catch(errorHandler);
   },
 
-  getQuiz(userId, quizId) {
-    return service.get(`quiz/${userId}`, { quizId })
+  getQuiz(userId) {
+    console.log(userId)
+    return service.get(`/quiz/${userId}`)
       .then(res => res.data)
       .catch(errorHandler);
   }

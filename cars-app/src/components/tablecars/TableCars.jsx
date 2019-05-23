@@ -24,9 +24,9 @@ class TableCars extends Component {
                 <div class="col-md-8">
                   <div class="card-body">
                     <h4 class="card-title">{element.model}</h4>
-                    <p>Rating: {element.rank.rating}</p> 
-                    <p>Users Rating: {element.review}</p> 
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p>Year: {element.rank.year}</p> 
+                    <p>Price: R$ {element.rank.price} </p> 
+                    <p class="card-text">{element.text}</p>
                     <Link to={{pathname:`/carpage/${element._id}`, state: element}} carInfo={this.props}><button onClick={this.clickCar} carInfo={this.props} type="button" class="btn btn-secondary">More info</button></Link>
                   </div>
               </div>

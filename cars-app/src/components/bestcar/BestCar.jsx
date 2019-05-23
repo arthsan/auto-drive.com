@@ -7,21 +7,25 @@ class BestCar extends Component {
     super(props)
     this.state = {
       cars: [],
+      result: '',
     }
     this.service = service;
   }
 
+  
   filterCars(arr){
-   return arr.filter((element) => element.rank.price <= 70000)
+    return arr.filter((element) => element.rank.price <= 70000)
   }
-
+  
   componentDidMount() {
-    this.service.getAllCars()
+    this.service.getAllCars(this.state)
     .then(response => {
-      console.log('@@@@@@@@@',response)
       const cars = this.filterCars(response)
-      console.log(cars)
-      this.setState({ cars: cars })
+      this.service.getQuiz(this.props.loggedInUser._id)
+      .then(response => {
+        console.log(response)
+        this.setState({ cars: cars})
+      })
     })
   }
   
