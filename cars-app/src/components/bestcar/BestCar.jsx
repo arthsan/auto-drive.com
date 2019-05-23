@@ -123,7 +123,7 @@ class BestCar extends Component {
     .then(response => {
       this.service.getQuiz(this.props.loggedInUser._id)
         .then((quiz) => {
-          const cars = this.masterFilter(response, quiz)
+          const cars = this.filterQ1(response, quiz)
           this.setState({ cars: cars, quiz: quiz }, () => {
             console.log(this.state);
           })
@@ -134,27 +134,29 @@ class BestCar extends Component {
   render () {  
     return (
       <div class="card mb-3">
-        {
-          this.state.cars.map((element,idx) =>{
-            return (
-              <div key={idx} class="row no-gutters row-car">
-                <div class="col-md-4">
-                  <img src={element.imageUrl} className="card-img " alt="photo" />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h4 class="card-title">{element.model}</h4>
-                    <p>Rating: {element.rank.rating}</p> 
-                    <p>Users Rating: {element.review}</p> 
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <Link to={{pathname:`/carpage/${element._id}`, state: element}} carInfo={this.props}><button onClick={this.clickCar} carInfo={this.props} type="button" class="btn btn-secondary">More info</button></Link>
+            {
+              this.state.cars.map((element,idx) =>{
+                return (
+                  <div key={idx} class="row no-gutters row-car">
+                    <div class="col-md-4">
+                      <img src={element.imageUrl} className="card-img" alt="photo" />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="car-adj">
+                        <h4 class="card-title">{element.model}</h4>
+                        <p>Depreciation: -{element.rank.depreciation}%</p> 
+                        <p>Transmission: {element.transmission}</p> 
+                        <p>Year: {element.rank.year}</p> 
+                        <p>Price: R$ {element.rank.price},00</p> 
+                        {/* <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
+                        <Link to={{pathname:`/carpage/${element._id}`, state: element}} carInfo={this.props}><button onClick={this.clickCar} carInfo={this.props} type="button" class="btn btn-secondary btn-desk btn-row-car">More info</button></Link>
+                      </div>
                   </div>
-              </div>
-              </div>
-
-            )
-          })    
-        }
+                  </div>
+    
+                )
+              })    
+            }
       </div>
       );    
   }
