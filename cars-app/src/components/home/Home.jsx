@@ -28,7 +28,7 @@ class Home extends Component {
               <FiltrableCars setCarInfo={this.props.setCarInfo} />
             </div>
             <div>
-                <Quiz />
+                <Quiz getUser={this.props.loggedInUser}/>
             </div>
         </div>
       )

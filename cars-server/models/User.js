@@ -11,7 +11,7 @@ const userSchema = new Schema({
   role: { type: String, enum: ['ADMIN', 'GUEST'], default: 'GUEST' },
   car: [{ type: Schema.Types.ObjectId, ref: 'Car' }],
   reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
-  quiz: [{ type: Schema.Types.ObjectId, ref: 'Quiz' }],
+  quiz: { type: Schema.Types.ObjectId, ref: 'Quiz' },
 });
 
 const User = mongoose.model('User', userSchema);
