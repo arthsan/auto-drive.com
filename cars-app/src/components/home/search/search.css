@@ -5,22 +5,21 @@
 }
 
 .search-row {
-    background-color: rgba(56, 133, 127);
-    /* filter: blur(5px); */
-    margin-bottom: 0 !important;
-    height: 380px;
-    /* background-image: url('https://res.cloudinary.com/dqtp9um44/image/upload/v1558564987/cars/56248_DREAM_CARS_dv5ju9.jpg'); */
-    background-position: center;
-    border: 1px solid rgba(56, 133, 127);
+  background-color: rgba(56, 133, 127);
+  /* margin-bottom: 0 !important; */
+  height: 380px;
+  background-image: url('https://res.cloudinary.com/dqtp9um44/image/upload/v1558580356/cars/background-green1_qxccdh.png');
+  background-position: center;
+  border: 1px solid rgba(56, 133, 127);
 
-  }
+}
   
   .search-tag {
     margin: 75px;
   }
   
   .search{
-    width: 400px;
+    width: 420px;
     height: 50px;
     border-radius: 10px;
     

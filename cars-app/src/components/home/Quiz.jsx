@@ -7,7 +7,7 @@ const Quiz = (props) => {
   return (
     <div className='quiz'>
           <p>Check now the best oportunity for you and our robots will help based on your necessities</p>
-          <Link to='/quizform'><button className="btn btn-dark add-car btn-lg" >Start Simulation</button></Link>          
+          <Link to='/quizform'><button className="btn-desk btn btn-dark add-car btn-lg" >Start Simulation</button></Link>          
     </div>
   )    
 }

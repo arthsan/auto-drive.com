@@ -11,17 +11,46 @@
 }
 
 .navbar {
+  padding: 10px;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+  border-bottom: 3px solid rgb(56,133,127);
 }
 
 .user{
   color:whitesmoke;
 }
 
-.button {
-}
+
 
 .links {
   display: flex;
   align-items: flex-end;
+}
+
+.nav-desk > img {
+  height: 90%;
+  margin: 5px 0 0 20px;
+}
+
+.btn-desk {
+  background-color: rgb(56, 133, 127);
+  border: rgb(56, 133, 127);
+  color: white;
+  margin-left:10px; 
+}
+
+.nav-right{
+  margin-right: 30px;
+}
+
+.btn-home{
+  margin-left: 40px;
+}
+
+.nav-desk{
+  height: 80px;
+}
+
+.card-body > h4 {
+  color: rgb(56, 133, 127)
 }
