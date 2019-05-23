@@ -57,7 +57,7 @@ class Login extends Component {
               <button class="btn btn-lg btn-log-sig btn-block " type="submit">Log in</button>
               <br/>
               <a>Do you already have an account?</a>                                     
-              <Link className="link-log-sig" to={"/signup"}>Signup</Link>
+              <Link className="link-log-sig" to={"/signup"}> Signup</Link>
           </form>
         </div>
       )
