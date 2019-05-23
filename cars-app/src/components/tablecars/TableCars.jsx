@@ -24,10 +24,10 @@ class TableCars extends Component {
                 <div class="col-md-8">
                   <div class="car-adj">
                     <h4 class="card-title">{element.model}</h4>
-                    <p>Depreciation: -{element.rank.depreciation}%</p> 
-                    <p>Transmission: {element.transmission}</p> 
-                    <p>Year: {element.rank.year}</p> 
-                    <p>Price: R$ {element.rank.price},00</p> 
+                    <p><b>Depreciation:</b> -{element.rank.depreciation}%</p> 
+                    <p><b>Transmission:</b> {element.transmission}</p> 
+                    <p><b>Year:</b> {element.rank.year}</p> 
+                    <p><b>Price:</b> R$ {element.rank.price},00</p> 
                     {/* <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
                     <Link to={{pathname:`/carpage/${element._id}`, state: element}} carInfo={this.props}><button onClick={this.clickCar} carInfo={this.props} type="button" class="btn btn-secondary btn-desk btn-row-car">More info</button></Link>
                   </div>
