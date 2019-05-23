@@ -40,8 +40,8 @@ class Login extends Component {
       );
     }else {
       return(
-        <div class="text-center body-login">
-          <form class="form-signin form-container" onSubmit={this.handleFormSubmit}>
+        <div class="">
+          <form class="form-container" onSubmit={this.handleFormSubmit}>
 
               <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
               
