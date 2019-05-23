@@ -21,6 +21,11 @@ border: 1px solid red;
   border-radius: 5px;
   padding: 1%;
   margin:2%;
+  background-color: white;
+}
+
+.form-back > h2{
+  font-weight: 700;
 }
 
 
@@ -42,4 +47,9 @@ input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {   
   outline: 0 none;
+}
+
+.form-back{
+  background: url('https://res.cloudinary.com/dqtp9um44/image/upload/v1558645302/back-img-form_lls9mx.png');
+  background-size: cover;
 }

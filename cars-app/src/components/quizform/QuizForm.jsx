@@ -83,11 +83,12 @@ class QuizForm extends Component {
       )
     }
     return (
-      <div>
+      <div className="form-back">
+        {/* <img src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558645302/back-img-form_lls9mx.png"/> */}
         <h2 className="title-form">Simulation</h2>
         <form onSubmit={e => this.handleSubmit(e)}>
           {/* QUESTION 1  */}
-          <div className="form-group container-form">
+          <div className="form-group container-form back-question">
             <div className="question-form">
               <h5>How much do you have avaliable to purchase?</h5>
               <section> 
