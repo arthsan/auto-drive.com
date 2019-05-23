@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const service = axios.create({
-  baseURL: 'https://project-cars-app.herokuapp.com/api',
+  baseURL: 'http://localhost:5000/api',
   // withCredentials: true // => you might need this when having the users in the app 
 });
 
@@ -53,8 +53,9 @@ export default {
       .catch(errorHandler);
   },
 
-  editQuiz(userId, quizId) {
-    return service.put(`/quiz/${quizId}`, { quizId })
+  editQuiz(userId, quizInfo) {
+    console.log(userId)
+    return service.put(`/quiz/${userId}`, { quizInfo })
       .then(res => res.data)
       .catch(errorHandler)
   },

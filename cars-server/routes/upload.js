@@ -102,17 +102,18 @@ router.put('/api/quiz/:id', (req, res, next) => {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
+  console.log('dasdkjalkjsd', req.body);
   const {
     q1, q2, q3, q4, q5, q6, q7, q8, q9,
-  } = req.body;
+  } = req.body.quizInfo;
 
-  Quiz.findOneAndUpdate({ _id: req.params.id }, {
+  Quiz.findOneAndUpdate({ user: req.params.id }, {
     $set: {
       q1, q2, q3, q4, q5, q6, q7, q8, q9,
     },
   })
-    .then((response) => {
-      res.json({ message: `User with ${req.params.id} is updated successfully.` });
+    .then((resp) => {
+      res.status(200).json(resp);
     })
     .catch((err) => {
       res.json(err);

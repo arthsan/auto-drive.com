@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import service from '../../api/service';
+import AuthService from '../auth/auth-service';
 
 import './quizform.css'
 
@@ -22,6 +23,7 @@ class QuizForm extends Component {
       q9: false, 
       redirect: false,
     }
+    this.authService = new AuthService();
   }
   
   handleChange = e => {  
@@ -32,6 +34,7 @@ class QuizForm extends Component {
   handleSwitch = e => {  
     const { name, checked } = e.target;
     this.setState({ [name]: checked });
+    console.log(checked)
   }
 
   handleSelect = e => {  
@@ -42,14 +45,18 @@ class QuizForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    if(this.props.loggedInUser.quiz.length < 0){
+    if(!this.props.loggedInUser.quiz){
       service.saveNewQuiz(this.state)
       .then(res => {
-        console.log(res)
           service.editUser(this.props.loggedInUser._id, res._id)
             .then(() => {
               this.setState({
                 redirect: !this.state.redirect,
+              }, () => {
+                this.authService.loggedin()
+                  .then((user) => {
+                    this.props.getUser(user)
+                  })
               })
             })
           // here you would redirect to some other page 
@@ -58,7 +65,7 @@ class QuizForm extends Component {
           console.log("Error while adding the thing: ", err);
       });
     } else {
-      service.editQuiz(this.state)
+      service.editQuiz(this.props.loggedInUser._id, this.state)
       .then(res => {
         console.log(res)
         this.setState({

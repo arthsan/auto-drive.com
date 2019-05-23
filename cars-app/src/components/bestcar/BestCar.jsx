@@ -19,8 +19,7 @@ class BestCar extends Component {
 
   filterQ2(arr, quiz){
     return arr.filter((element) => {
-      if (quiz.q2 && !element.used) {
-        console.log(element)
+      if (quiz.q2 && element.rank.year >= 2018) {
         return element;
       } 
       if (!quiz.q2) {
@@ -107,6 +106,7 @@ class BestCar extends Component {
   }
 
   masterFilter(arr, quiz) {
+    console.log(arr)
     const filter1 = this.filterQ1(arr, quiz);
     console.log(filter1)
     const filter2 = this.filterQ2(this.filterQ1(filter1,quiz), quiz);
@@ -135,7 +135,6 @@ class BestCar extends Component {
         .then((quiz) => {
           const cars = this.masterFilter(response, quiz)
           this.setState({ cars: cars, quiz: quiz }, () => {
-            console.log(this.state);
           })
         })
     })
