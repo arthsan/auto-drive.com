@@ -82,8 +82,9 @@ router.post('/api/cars/create', (req, res, next) => {
     });
 });
 
-router.get('/api/quiz', (req, res, next) => {
-  Quiz.find()
+router.get('/api/quiz/:id', (req, res, next) => {
+  console.log(req.params.id)
+  Quiz.findOne({ user: req.params.id })
     .then((response) => {
       res.status(200).json(response);
     })

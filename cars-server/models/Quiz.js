@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const quizSchema = new Schema({
   affinity: Number,
-  user: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+  user: { type: Schema.Types.ObjectId, ref: 'User' },
   q1: Number,
   q2: { type: Boolean, default: false },
   q3: Number,

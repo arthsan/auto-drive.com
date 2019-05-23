@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const service = axios.create({
-  baseURL: 'https://project-cars-app.herokuapp.com/api',
+  baseURL: 'http://localhost:5000/api',
   // withCredentials: true // => you might need this when having the users in the app 
 });
 
@@ -40,8 +40,8 @@ export default {
       .catch(errorHandler)
   },
 
-  getAllCars() {
-    return service.get('/cars')
+  getAllCars(user) {
+    return service.get('/cars', {user})
       .then(res => res.data)
       .catch(errorHandler);
   },

@@ -9,4 +9,16 @@
 
 .buttons {
   padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.row-car{
+  margin: 3% 5% 0 5%;
+  padding: 0 5%;
+}
+
+.title-add {
+  margin: 2%;
 }
