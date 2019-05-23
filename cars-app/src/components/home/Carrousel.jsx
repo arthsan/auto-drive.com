@@ -1,5 +1,7 @@
 import React from 'react';
 import './carrousel.css'
+import { Link } from 'react-router-dom';
+
 
 const Carrousel = (props) => {
   return (
@@ -17,7 +19,7 @@ const Carrousel = (props) => {
                 <div class="carousel-caption">
                   <h1>Searching for a new car?</h1>
                   <h4 class="">We can help you!</h4>
-                  <a class="btn-desk btn btn-dark add-car btn-lg" href="#">Sign up today</a>
+                  <Link to='/login'><a class="btn-desk btn btn-dark add-car btn-lg" href="#">Simulation</a></Link>
                 </div>
             </div>
 
@@ -26,7 +28,7 @@ const Carrousel = (props) => {
                 <div class="carousel-caption">
                   <h1>Used cars?</h1>
                   <h4 class="">We have the choice for you</h4>
-                  <a class="btn-desk btn btn-dark add-car btn-lg" href="#">Sign up today</a>
+                  <Link to='/login'></Link><a class="btn-desk btn btn-dark add-car btn-lg" href="#">Sign up today</a>
                 </div>
             </div>
 
@@ -35,7 +37,7 @@ const Carrousel = (props) => {
                 <div class="carousel-caption">
                   <h1>IPVA free</h1>
                   <h4 class="">Buying a car from our database,<br/> your IPVA in the first year is free</h4>
-                  <a class="btn-desk btn btn-dark add-car btn-lg" href="#">Sign up today</a>
+                  <Link to='/login'><a class="btn-desk btn btn-dark add-car btn-lg" href="#">Sign up today</a></Link>
                 </div>
             </div>
 

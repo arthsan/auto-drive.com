@@ -54,13 +54,13 @@ class NavBar extends Component {
           <div className="nav-desk">
             <img src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558576846/logo_white_k8pynd.png"/>
             <Link to='/'><button className="btn btn-dark add-car btn-desk btn-home" >Home</button></Link>
+            <a className="btn user" href="#" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+              {this.state.loggedInUser.username}
+            </a>
           </div>
                 <div>
-                <a className="btn btn-dark" href="#" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
-                  {this.state.loggedInUser.username}
-                </a>
                 <div className="links">
-                <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-light action-button add-car" >Best Cars</button></Link>
+                <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car btn-desk" >Best Cars</button></Link>
                   <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="btn btn-dark add-car">Profile</button>
                   </Link>
                   <Link to='/'><button type="button" className="btn btn-dark add-car" onClick={() => this.logoutUser()}>Logout</button>
@@ -77,6 +77,7 @@ class NavBar extends Component {
         <nav className="navbar navbar-dark bg-dark">
         <div className="nav-desk">
           <img src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558576846/logo_white_k8pynd.png"/>
+          <Link to='/'><button className="btn btn-dark add-car btn-desk btn-home" >Home</button></Link>
         </div>
           <div className='links'>
           <div><Link to='/login'><button type="button" className="btn btn-light btn-desk">Login</button></Link></div>

@@ -24,7 +24,7 @@
 
 .links {
   display: flex;
-  align-items: flex-end;
+  align-items: center flex-end;
 }
 
 .nav-desk > img {
@@ -49,8 +49,15 @@
 
 .nav-desk{
   height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .card-body > h4 {
   color: rgb(56, 133, 127)
+}
+
+.user{
+  border-color: rgb(56, 133, 127);
+  color: white;
 }

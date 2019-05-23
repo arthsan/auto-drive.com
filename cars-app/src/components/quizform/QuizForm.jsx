@@ -218,7 +218,7 @@ class QuizForm extends Component {
               </div>
             </div>
           </section>
-          <button type="submit" class="btn btn-secondary">Send</button>
+          <button type="submit" class="btn btn-secondary btn-desk">Send</button>
         </form>
       </div>
     );
