@@ -66,9 +66,8 @@ class Profile extends Component {
     }else {
       return (
         <div>
-          <h2>Profile Edit</h2>
-          <form onSubmit={e => this.handleFormSubmit(e)}>
-            {/* <div className="container"> */}
+          <h2 className="title-add">Profile Edit</h2>
+          <form className="row-car" onSubmit={e => this.handleFormSubmit(e)}>
             <div className="row">
               <div className="col col-pad">
                 {/* COLUNA 1 */}
@@ -133,9 +132,10 @@ class Profile extends Component {
                     </div>
                 </div>
                 <div className="buttons">
-                  <input className='btn btn-dark' type="file" onChange={(e) => this.handleFileUpload(e)} /> 
+                  <input className='btn ' type="file" 
+                  onChange={(e) => this.handleFileUpload(e)} /> 
+                  <button className="btn btn-desk" type="submit">Save Profile</button>
                 </div> 
-                  <button className='btn btn-dark' type="submit">Save Profile</button>
               </div>
             </div>
           </form>

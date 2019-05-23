@@ -1,13 +1,13 @@
 
 
 .footer{
-    background-color: black;
+    background-color: rgb(52, 58, 64);
     color: whitesmoke;
-    /* width:42px; */
-    height:100px;
-    /* border:0; */
-    /* float: right; */
-    /* margin: 0 25px 22px; */
+    height:100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-top: 1%;
 }
 
 .copyright{
@@ -15,3 +15,4 @@
     color: whitesmoke;
     padding-top: 70px;
 }
+

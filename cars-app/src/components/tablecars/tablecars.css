@@ -3,10 +3,7 @@
 } */
 
 
-.card-body {
-  text-align: left;
 
-}
 
 .row-car{
   margin: 0.5% 1%;
@@ -16,5 +13,40 @@
 
 .car-img{
   text-align: center;
-  padding: 40px;
+  padding: 2%;
+}
+
+.row-car {
+  text-align: left;
+}
+
+.card-title{
+  color:rgb(56, 133, 127);
+  font-weight: 700;
+  margin-top:1%;
+}
+
+.btn-row-car{
+  margin: 1% 0 3% 0;
+}
+
+
+.car-adj{
+padding: 1% 0 1% 0;
+}
+
+
+.car-adj > h4{
+  font-weight: 700;
+}
+.car-adj > p{
+  font-weight: 700;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.card-img{
+  margin-top: 2%;
 }

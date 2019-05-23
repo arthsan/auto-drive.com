@@ -110,8 +110,8 @@ class AddCar extends Component {
   render() {
     return (
       <div>
-        <h2>New Car</h2>
-        <form onSubmit={e => this.handleSubmit(e)}>
+        <h2 className="title-add">New Car</h2>
+        <form className="row-car" onSubmit={e => this.handleSubmit(e)}>
           {/* <div className="container"> */}
             <div className="row">
               <div className="col col-pad">
@@ -404,7 +404,7 @@ class AddCar extends Component {
             <input 
               type="file" 
               onChange={(e) => this.handleFileUpload(e)} /> 
-            <button type="submit">Save Car</button>
+            <button className="btn btn-desk" type="submit">Save Car</button>
           </div> 
         </form>
       </div>
