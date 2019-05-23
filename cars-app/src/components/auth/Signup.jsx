@@ -63,7 +63,7 @@ class Signup extends Component {
                   <label for="inputPassword" class="sr-only">Password</label>
                   <input type="password" name="password" id="inputPassword" class="form-control input-control" placeholder="Password" value={this.state.password} onChange={ e => this.handleChange(e)} required/>
               </div>                
-              <button class="btn btn-lg btn-log-sig btn-block " type="submit">Log in</button>
+              <button class="btn btn-lg btn-log-sig btn-block " type="submit">Sign up</button>
               <br/>
               <a>Already have account?</a>
               <Link className="link-log-sig"to={"/"}> Login</Link>                                     
