@@ -41,7 +41,7 @@ export default {
   },
 
   getAllCars(user) {
-    return service.get('/cars', {user})
+    return service.get('/cars')
       .then(res => res.data)
       .catch(errorHandler);
   },

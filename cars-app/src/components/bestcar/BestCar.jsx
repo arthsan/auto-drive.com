@@ -42,7 +42,7 @@ class BestCar extends Component {
     element.rank.horsePower > 120) {
         return element;
       }
-      if(quiz.q4 === 'Work' && element.accessories.comfort.airCondit && element.rank.trunk > 400) {
+      if(quiz.q4 === 'Work') {
         return element;
       }
       if(quiz.q4 === 'Security' && element.accessories.security.airBag && element.accessories.security.backupCam && element.accessories.security.fogLights) {
@@ -107,23 +107,33 @@ class BestCar extends Component {
   }
 
   masterFilter(arr, quiz) {
-    this.filterQ1(arr, quiz);
-    // this.filterQ2(this.filterQ1(this.state.cars,this.state.quiz), this.state.quiz);
-    // this.filterQ3(this.filterQ2(this.state.cars,this.state.quiz), this.state.quiz);
-    // this.filterQ4(this.filterQ3(this.state.cars,this.state.quiz), this.state.quiz);
-    // this.filterQ5(this.filterQ4(this.state.cars,this.state.quiz), this.state.quiz);
-    // this.filterQ6(this.filterQ5(this.state.cars,this.state.quiz), this.state.quiz);
-    // this.filterQ7(this.filterQ6(this.state.cars,this.state.quiz), this.state.quiz);
-    // this.filterQ8(this.filterQ7(this.state.cars,this.state.quiz), this.state.quiz);
-    // this.filterQ9(this.filterQ8(this.state.cars,this.state.quiz), this.state.quiz);
+    const filter1 = this.filterQ1(arr, quiz);
+    console.log(filter1)
+    const filter2 = this.filterQ2(this.filterQ1(filter1,quiz), quiz);
+    console.log(filter2)
+    const filter3 = this.filterQ3(this.filterQ2(filter2,quiz), quiz);
+    console.log(filter3)
+    const filter4 = this.filterQ4(this.filterQ3(filter3,quiz), quiz);
+    console.log(filter4)
+    const filter5 = this.filterQ5(this.filterQ4(filter4,quiz), quiz);
+    console.log(filter5)
+    const filter6 = this.filterQ6(this.filterQ5(filter5,quiz), quiz);
+    console.log(filter6)
+    const filter7 = this.filterQ7(this.filterQ6(filter6,quiz), quiz);
+    console.log(filter7)
+    const filter8 = this.filterQ8(this.filterQ7(filter7,quiz), quiz);
+    console.log(filter8)
+    const filter9 = this.filterQ9(this.filterQ8(filter8,quiz), quiz);
+    console.log(filter9)
+    return filter9;
   }
 
   componentDidMount() {
-    this.service.getAllCars(this.state)
+    this.service.getAllCars()
     .then(response => {
       this.service.getQuiz(this.props.loggedInUser._id)
         .then((quiz) => {
-          const cars = this.filterQ1(response, quiz)
+          const cars = this.masterFilter(response, quiz)
           this.setState({ cars: cars, quiz: quiz }, () => {
             console.log(this.state);
           })
