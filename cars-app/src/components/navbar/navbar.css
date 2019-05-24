@@ -2,13 +2,13 @@
   border: 1px solid red;
 } */
 
-.add-car {
+/* .add-car {
   margin-right: 20px;
-}
+} */
 
-.dropdown{
+/* .dropdown{
   margin: 5px 20px 0 0;
-}
+} */
 
 .navbar {
   padding: 10px;
@@ -16,35 +16,24 @@
   border-bottom: 3px solid rgb(56,133,127);
 }
 
-.user{
-  color:whitesmoke;
+.logo{
+  height: 100px;
 }
 
-
-
-.links {
-  display: flex;
-  align-items: center flex-end;
+.margin-btn {
+  margin-left: 1150px;
 }
 
-.nav-desk > img {
-  height: 90%;
-  margin: 5px 0 0 20px;
+.margin-btn-log {
+  margin-left: 1350px;
 }
+
 
 .btn-desk {
   background-color: rgb(56, 133, 127);
   border: rgb(56, 133, 127);
   color: white;
   margin-left:15px; 
-}
-
-.nav-right{
-  margin-right: 30px;
-}
-
-.btn-home{
-  margin-left: 40px;
 }
 
 .nav-desk{
@@ -60,4 +49,14 @@
 .user{
   border-color: rgb(56, 133, 127);
   color: white;
+}
+
+@media (max-width: 376px) {
+  *{
+    font-size: 11px;
+  }
+
+  .logo{
+    height: 60px;
+  }
 }

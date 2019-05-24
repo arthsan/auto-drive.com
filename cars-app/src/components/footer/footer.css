@@ -11,7 +11,16 @@
 }
 
 .footer > div {
-    padding: 50px;
+  padding: 50px;
 }
 
-
+@media (max-width: 376px) {
+  .footer{
+    height: 110px; 
+  }
+  .footer > div {
+    padding: 30px 140px 0 0;
+    
+  }
+   
+}

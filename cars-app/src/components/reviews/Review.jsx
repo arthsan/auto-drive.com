@@ -5,7 +5,7 @@ const Review = (props) => {
   return (
   <div>
     <div className="review-car box">
-        <div>
+        <div className="user-data">
           <h5 className="review-title">Reviews</h5>
           <p>Rodrigo Leclerc</p>
         </div>

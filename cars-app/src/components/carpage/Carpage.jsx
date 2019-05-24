@@ -78,6 +78,7 @@ const CarPage = (props) => {
         <h5>{props.location.state.model}</h5>
         <p>{props.location.state.text}</p>
       </div>
+      <button type="button" class="btn btn-desk btn-lg">I'm interested!</button>
       <Review />
     </div>           
   )    

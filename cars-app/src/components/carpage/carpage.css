@@ -108,3 +108,28 @@ div > ul {
   width: 90%;
   margin-left: 5%;
 }
+
+
+@media (max-width: 376px) {
+  .itens-car > div > ul > h3 {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .itens-car{
+    margin: 1% 5% 1% 0;
+  }
+
+  .description-car > p{
+    font-size: 14px;
+  }
+  
+  .description-car > h5{
+    font-size: 16px;
+    margin:3% 0 5% 5%;
+  }
+
+  .btn.res{
+    margin-right: 40px;
+  }
+}

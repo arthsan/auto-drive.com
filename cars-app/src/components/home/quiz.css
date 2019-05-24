@@ -22,3 +22,15 @@ padding: 120px 0 40px 0;
   color: white;
   margin-left:15px; 
 }
+
+@media (max-width: 376px) {
+  
+  .quiz > p {
+    font-size: 16px;
+    text-align: justify;  
+    padding: 60px 40px 20px 40px;
+  }
+  .quiz {
+    height: 250px;
+  }
+}

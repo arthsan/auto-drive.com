@@ -10,7 +10,6 @@
   height: 380px;
   background-image: url('https://res.cloudinary.com/dqtp9um44/image/upload/v1558580356/cars/background-green1_qxccdh.png');
   background-position: center;
-  border: 1px solid rgba(56, 133, 127);
 
 }
   
@@ -30,3 +29,32 @@
   *{
     border: 1px solid red;
   } */
+
+  @media (max-width: 376px) {
+    *{
+      font-size: 11px;
+    }
+    .search-row > h6{
+      font-size: 30px;
+    }
+    .search{
+      width: 300px;
+      height: 40px;
+      border-radius: 10px;
+      font-size: 15px;
+      
+    }
+
+    .search-tag {
+      margin: 10% 0 0 0;
+    }
+
+    .search-row {
+      height: 250px;
+    }
+
+    .search-row > h6{
+    padding-top: 65px;
+    }
+
+  }
