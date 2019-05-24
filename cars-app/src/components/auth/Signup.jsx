@@ -66,7 +66,7 @@ class Signup extends Component {
               <button class="btn btn-lg btn-log-sig btn-block " type="submit">Sign up</button>
               <br/>
               <a>Already have account?</a>
-              <Link className="link-log-sig"to={"/"}> Login</Link>                                     
+              <Link className="link-log-sig"to={"/login"}> Login</Link>                                     
           </form>
         </div>
 

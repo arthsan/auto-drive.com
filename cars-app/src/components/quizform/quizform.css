@@ -53,3 +53,26 @@ input[type="color"]:focus,
   background: url('https://res.cloudinary.com/dqtp9um44/image/upload/v1558645302/back-img-form_lls9mx.png');
   background-size: cover;
 }
+
+.custom-control-input:checked~.custom-control-label::before {
+  color: #fff;
+  border-color: rgb(56, 133, 127);
+  background-color: rgb(56, 133, 127);;
+}
+
+@media (max-width: 376px) {
+  .question-form {
+    padding: 2%;
+    width: 250px;
+    margin:2%;
+  }
+
+  .container-form{
+    padding: 0 15%;
+    text-align: left;
+  }
+}
+
+.border-input{
+  border: 1px solid rgba(56, 133, 127, 0.26);
+}

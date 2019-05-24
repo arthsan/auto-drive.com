@@ -92,10 +92,10 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>How much do you have available to purchase?</h5>
               <section> 
-                <b>R$ 0</b> 
-                <input id="range-slider-demo" type="number" name="q1" value={ this.state.q1 }
+                <b>R$ 0 </b> 
+                <input className="border-input" id="range-slider-demo" type="number" name="q1" value={ this.state.q1 }
                   onChange={ e => this.handleChange(e)}/>
-                <b>R$ 200.000</b>
+                <b> R$ 200.000</b>
               </section>
             </div>
           </div>
@@ -116,7 +116,7 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>How much would you like pay for maintenance per month?</h5>
               <section> 
-                <b>R$ 300</b> <input id="range-slider-demo" type="number" class="span2" name="q3" value={this.state.q3} onChange={ e => this.handleChange(e)}/> <b>R$ 3.000</b>
+                <b>R$ 300</b> <input className="border-input" id="range-slider-demo" type="number" class="span2" name="q3" value={this.state.q3} onChange={ e => this.handleChange(e)}/> <b>R$ 3.000</b>
               </section>
             </div>
           </div>
@@ -202,7 +202,7 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>How old are you?</h5>
               <div> 
-                <b>18 years</b> <input id="range-slider-demo" type="number" name="q9" class="span2" value={this.state.q9} onChange={ e => this.handleChange(e)}/> <b>100 years</b>
+                <b>18 years</b> <input className="border-input" id="range-slider-demo" type="number" name="q9" class="span2" value={this.state.q9} onChange={ e => this.handleChange(e)}/> <b>100 years</b>
               </div>
             </div>
           </section>

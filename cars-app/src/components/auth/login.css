@@ -43,3 +43,16 @@
 .form-container {
   height:573px;
 }
+
+.row{
+  margin-left: 0;
+  margin-right: 0;
+
+}
+
+@media (max-width: 376px) {
+  .form-container {
+    max-width: none;
+  }
+ 
+}
