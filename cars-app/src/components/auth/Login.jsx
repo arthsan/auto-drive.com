@@ -40,8 +40,8 @@ class Login extends Component {
       );
     }else {
       return(
-        <div class="text-center body-login">
-          <form class="form-signin form-container" onSubmit={this.handleFormSubmit}>
+        <div class="">
+          <form class="form-container" onSubmit={this.handleFormSubmit}>
 
               <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
               
@@ -57,7 +57,7 @@ class Login extends Component {
               <button class="btn btn-lg btn-log-sig btn-block " type="submit">Log in</button>
               <br/>
               <a>Do you already have an account?</a>                                     
-              <Link className="link-log-sig" to={"/signup"}>Signup</Link>
+              <Link className="link-log-sig" to={"/signup"}> Signup</Link>
           </form>
         </div>
       )
