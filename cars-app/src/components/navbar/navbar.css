@@ -1,27 +1,66 @@
-/* *{
-  border: 1px solid red;
-} */
-
-.add-car {
-  margin-right: 20px;
-}
-
-.dropdown{
-  margin: 5px 20px 0 0;
-}
 
 .navbar {
+  padding: 10px;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+  border-bottom: 3px solid rgb(56,133,127);
+}
+
+.logo{
+  height: 100px;
+}
+
+.margin-btn {
+  margin-left: 1150px;
+}
+
+.margin-btn-log {
+  margin-left: 1350px;
+}
+
+
+.btn-desk {
+  background-color: rgb(56, 133, 127);
+  border: rgb(56, 133, 127);
+  color: white;
+  margin-left:15px; 
+}
+
+.nav-desk{
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.card-body > h4 {
+  color: rgb(56, 133, 127);
 }
 
 .user{
-  color:whitesmoke;
+  border-color: rgb(56, 133, 127);
+  color: white;
 }
 
-.button {
+@media (max-width: 376px) {
+  *{
+    font-size: 11px;
+  }
+
+  .logo{
+    height: 60px;
+  }
+
+  .adj-nav-but{
+    margin-left:6px;
+  }
 }
 
-.links {
-  display: flex;
-  align-items: flex-end;
+@media (max-width: 1500px) {
+  .margin-btn {
+    margin-left: 700px;
+  }
+
+  .margin-btn-log {
+    margin-left: 870px;
+  }
 }
+

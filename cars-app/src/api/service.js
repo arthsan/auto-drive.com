@@ -40,15 +40,23 @@ export default {
       .catch(errorHandler)
   },
 
-  getAllCars() {
+  getAllCars(user) {
     return service.get('/cars')
       .then(res => res.data)
       .catch(errorHandler);
   },
 
-  getQuiz(userId, quizId) {
-    return service.get(`quiz/${userId}`, { quizId })
+  getQuiz(userId) {
+    console.log(userId)
+    return service.get(`/quiz/${userId}`)
       .then(res => res.data)
       .catch(errorHandler);
-  }
+  },
+
+  editQuiz(userId, quizInfo) {
+    console.log(userId)
+    return service.put(`/quiz/${userId}`, { quizInfo })
+      .then(res => res.data)
+      .catch(errorHandler)
+  },
 }

@@ -9,4 +9,22 @@
 
 .buttons {
   padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.row-car{
+  margin: 3% 5% 0 5%;
+  padding: 2% 0 0 1%;
+}
+
+.title-add {
+  margin: 2%;
+}
+
+.cloud{
+  border: 2px solid rgb(56, 133, 127);
+  border-radius: 10px;
+  padding: 10px;
 }

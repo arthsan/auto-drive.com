@@ -1,9 +1,58 @@
-.log-body {
-    height: 50vh;
+
+.form-container {
+  max-width: 29%;
+  padding: 3%;
+  margin: 3% auto;
 }
 
-.login {
-    display: flex;
-    justify-content: center;
-    padding-top: 10%;
+.input-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+.inputs-login{
+  padding: 5%;
+}
+
+.btn-log-sig{
+    background-color: rgb(56, 133, 127);
+    border: rgb(56, 133, 127);
+    width: 90%;
+    margin: 4% 0 0 5%;
+    color: white;
+}
+
+.btn-log-sig:active { 
+    color: white;
+    background-color: rgb(42, 102, 97);
+}
+
+
+.link-log-sig{
+    color: rgb(56, 133, 127);
+}
+/* 
+*{
+    border: 1px solid red;
+} */
+
+.form-container {
+  height:573px;
+}
+
+.row{
+  margin-left: 0;
+  margin-right: 0;
+
+}
+
+@media (max-width: 376px) {
+  .form-container {
+    max-width: none;
+  }
+ 
 }

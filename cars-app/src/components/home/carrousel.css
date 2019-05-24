@@ -1,0 +1,25 @@
+.btn-desk {
+  background-color: rgb(56, 133, 127);
+  border: rgb(56, 133, 127);
+  color: white;
+  margin-left:15px; 
+  margin-bottom: 2%;
+}
+
+.btn-desk:active {
+  color: white;
+  background-color: rgb(42, 102, 97);
+}
+
+.carousel-caption{
+  background-color: rgba(0, 0, 0, 0.404);
+  width: 100%;
+  left:0;
+  bottom: 0;
+}
+
+@media (max-width: 376px) {
+  *{
+    font-size: 11px;
+  }
+}

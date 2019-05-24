@@ -6,7 +6,7 @@
 .box{
   display: flex;
   align-items: flex-start;
-  margin: 1% 1% 0 1%;
+  margin: 1% 1%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
 } 
@@ -18,9 +18,23 @@
 
 div > h6 {
   margin: 1% 0;
+  
+}
 
+.review-title{
+  width: 90%;
+  text-align: justify;
+  color: rgb(56, 133, 127);
+  font-weight: 700;
 }
 
 .text-review{
-  width: 90%;
+  margin:1% 0 1% 4%;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 1%;
+}
+
+.user-data{
+  padding: 15px 10px;
 }

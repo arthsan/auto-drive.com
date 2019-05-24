@@ -3,17 +3,45 @@
 } */
 
 
-.card-body {
-  text-align: left;
 
-}
 
 .row-car{
   margin: 0.5% 1%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
+  text-align: left;
 }
 
 .car-img{
   text-align: center;
+  padding: 2%;
+}
+
+.card-title{
+  color:rgb(56, 133, 127);
+  font-weight: 700;
+  margin-top:1%;
+}
+
+.btn-row-car{
+  margin: 1% 0 3% 0;
+}
+
+
+.car-adj{
+padding: 1% 0 1% 8%;
+}
+
+
+.car-adj > h4{
+  font-weight: 700;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+.card-img{
+  margin-top: 2%;
 }

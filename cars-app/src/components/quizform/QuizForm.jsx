@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import service from '../../api/service';
+import AuthService from '../auth/auth-service';
 
 import './quizform.css'
 
@@ -22,6 +23,7 @@ class QuizForm extends Component {
       q9: false, 
       redirect: false,
     }
+    this.authService = new AuthService();
   }
   
   handleChange = e => {  
@@ -32,6 +34,7 @@ class QuizForm extends Component {
   handleSwitch = e => {  
     const { name, checked } = e.target;
     this.setState({ [name]: checked });
+    console.log(checked)
   }
 
   handleSelect = e => {  
@@ -42,20 +45,34 @@ class QuizForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    service.saveNewQuiz(this.state)
-    .then(res => {
-      console.log(res)
-        service.editUser(this.props.loggedInUser._id, res._id)
-          .then(() => {
-            this.setState({
-              redirect: !this.state.redirect,
+    if(!this.props.loggedInUser.quiz){
+      service.saveNewQuiz(this.state)
+      .then(res => {
+          service.editUser(this.props.loggedInUser._id, res._id)
+            .then(() => {
+              this.setState({
+                redirect: !this.state.redirect,
+              }, () => {
+                this.authService.loggedin()
+                  .then((user) => {
+                    this.props.getUser(user)
+                  })
+              })
             })
-          })
-        // here you would redirect to some other page 
-    })
-    .catch(err => {
-        console.log("Error while adding the thing: ", err);
-    });
+          // here you would redirect to some other page 
+      })
+      .catch(err => {
+          console.log("Error while adding the thing: ", err);
+      });
+    } else {
+      service.editQuiz(this.props.loggedInUser._id, this.state)
+      .then(res => {
+        console.log(res)
+        this.setState({
+          redirect: !this.state.redirect
+        })
+      })
+    }
   }  
 
   render() {
@@ -66,18 +83,19 @@ class QuizForm extends Component {
       )
     }
     return (
-      <div>
+      <div className="form-back">
+        {/* <img src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558645302/back-img-form_lls9mx.png"/> */}
         <h2 className="title-form">Simulation</h2>
         <form onSubmit={e => this.handleSubmit(e)}>
           {/* QUESTION 1  */}
-          <div className="form-group container-form">
+          <div className="form-group container-form back-question">
             <div className="question-form">
-              <h5>How much do you have avaliable to purchase?</h5>
+              <h5>How much do you have available to purchase?</h5>
               <section> 
-                <b>R$ 0</b> 
-                <input id="range-slider-demo" type="number" name="q1" value={ this.state.q1 }
+                <b>R$ 0 </b> 
+                <input className="border-input" id="range-slider-demo" type="number" name="q1" value={ this.state.q1 }
                   onChange={ e => this.handleChange(e)}/>
-                <b>R$ 200.000</b>
+                <b> R$ 200.000</b>
               </section>
             </div>
           </div>
@@ -86,16 +104,10 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>Do you have preference for a new car?</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q2" id="inlineRadio1" 
-                  value={ this.state.q2 }
-                  onChange={ e => this.handleSwitch(e)}/>
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q2" id="inlineRadio1" 
-                  value={ this.state.q2 }
-                  onChange={ e => this.handleSwitch(e)}/>
-                <label class="form-check-label" for="inlineRadio1">No</label>
+              <div className="switches custom-control custom-switch">
+                  <input type="checkbox" value={this.state.q2} id="customSwitch2" className="custom-control-input" name='q2' onChange={e => this.handleSwitch(e)} />
+                  <label className="custom-control-label" htmlFor="customSwitch2">{this.state.q2 ? 'Yes' : 'No'}</label>
+                </div>
               </div>
             </div>
           </section>
@@ -104,14 +116,14 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>How much would you like pay for maintenance per month?</h5>
               <section> 
-                <b>R$ 0</b> <input id="range-slider-demo" type="number" class="span2" name="q3" value={this.state.q3} onChange={ e => this.handleChange(e)}/> <b>R$ 5.000</b>
+                <b>R$ 300</b> <input className="border-input" id="range-slider-demo" type="number" class="span2" name="q3" value={this.state.q3} onChange={ e => this.handleChange(e)}/> <b>R$ 3.000</b>
               </section>
             </div>
           </div>
           {/* QUESTION 4  */}
           <div className="form-group container-form">
             <div class="question-form">
-              <h5>Wich purpose of the vehicle?</h5>
+              <h5>Which purpose of the vehicle?</h5>
               <div class="form-check form-check-inline">
                 {/* <input class="form-check-input" type="radio" name="q4" id="inlineRadio3" 
                   value={ this.state.q4 }
@@ -140,18 +152,12 @@ class QuizForm extends Component {
           {/* QUESTION 5  */}
           <section className="form-group container-form">
             <div className="question-form">
-              <h5>Do you travel by car?</h5>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q5" id="inlineRadio6" 
-                value={ this.state.q5 }
-                onChange={ e => this.handleSwitch(e)}/>
-                <label class="form-check-label" for="inlineRadio6">Yes</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q5" id="inlineRadio6" 
-                value={ this.state.q5 }
-                onChange={ e => this.handleSwitch(e)}/>
-                <label class="form-check-label" for="inlineRadio6">No</label>
+            <h5>Do you travel by car?</h5>
+            <div class="form-check form-check-inline">
+              <div className="switches custom-control custom-switch">
+                  <input type="checkbox" value={this.state.q5} id="customSwitch5" className="custom-control-input" name='q5' onChange={e => this.handleSwitch(e)} />
+                  <label className="custom-control-label" htmlFor="customSwitch5">{this.state.q5 ? 'Yes' : 'No'}</label>
+                </div>
               </div>
             </div>
           </section>
@@ -160,16 +166,10 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>Do you live near you work?</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q6" id="inlineRadio8" 
-                value={ this.state.q6 }
-                onChange={ e => this.handleSwitch(e)}/>
-                <label class="form-check-label" for="inlineRadio8">Yes</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q6" id="inlineRadio8" 
-                value={ this.state.q6 }
-                onChange={ e => this.handleSwitch(e)}/>
-                <label class="form-check-label" for="inlineRadio8">No</label>
+              <div className="switches custom-control custom-switch">
+                  <input type="checkbox" value={this.state.q6} id="customSwitch6" className="custom-control-input" name='q6' onChange={e => this.handleSwitch(e)} />
+                  <label className="custom-control-label" htmlFor="customSwitch6">{this.state.q6 ? 'Yes' : 'No'}</label>
+                </div>
               </div>
             </div>
           </section>
@@ -178,34 +178,22 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>Do you travel frequently?</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q7" id="inlineRadio10" 
-                value={ this.state.q7 }
-                onChange={ e => this.handleSwitch(e)}/>
-                <label class="form-check-label" for="inlineRadio10">Yes</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q7" id="inlineRadio10" 
-                value={ this.state.q7 }
-                onChange={ e => this.handleSwitch(e)}/>
-                <label class="form-check-label" for="inlineRadio10">No</label>
+              <div className="switches custom-control custom-switch">
+                  <input type="checkbox" value={this.state.q7} id="customSwitch7" className="custom-control-input" name='q7' onChange={e => this.handleSwitch(e)} />
+                  <label className="custom-control-label" htmlFor="customSwitch7">{this.state.q7 ? 'Yes' : 'No'}</label>
+                </div>
               </div>
             </div>
           </section>
           {/* QUESTION 8  */}
           <section className="form-group container-form">
             <div className="question-form">
-              <h5>Do you drives in dirt roads?</h5>
+              <h5>Do you drive on dirt roads?</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q8" id="inlineRadio12" 
-                value={ this.state.q8 }
-                onChange={ e => this.handleSwitch(e)}/>
-                <label class="form-check-label" for="inlineRadio12">Yes</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="q8" id="inlineRadio12" 
-                value={ this.state.q8 }
-                onChange={ e => this.handleSwitch(e)}/>
-                <label class="form-check-label" for="inlineRadio12">No</label>
+              <div className="switches custom-control custom-switch">
+                  <input type="checkbox" value={this.state.q8} id="customSwitch8" className="custom-control-input" name='q8' onChange={e => this.handleSwitch(e)} />
+                  <label className="custom-control-label" htmlFor="customSwitch8">{this.state.q8 ? 'Yes' : 'No'}</label>
+                </div>
               </div>
             </div>
           </section>
@@ -214,11 +202,11 @@ class QuizForm extends Component {
             <div className="question-form">
               <h5>How old are you?</h5>
               <div> 
-                <b>18 years</b> <input id="range-slider-demo" type="number" name="q9" class="span2" value={this.state.q9} onChange={ e => this.handleChange(e)}/> <b>100 years</b>
+                <b>18 years</b> <input className="border-input" id="range-slider-demo" type="number" name="q9" class="span2" value={this.state.q9} onChange={ e => this.handleChange(e)}/> <b>100 years</b>
               </div>
             </div>
           </section>
-          <button type="submit" class="btn btn-secondary">Send</button>
+          <button type="submit" class="btn btn-secondary btn-desk">Send</button>
         </form>
       </div>
     );

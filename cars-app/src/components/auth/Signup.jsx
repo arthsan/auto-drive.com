@@ -49,22 +49,27 @@ class Signup extends Component {
       );
     } else {
       return(
-        <div className='log-body'>
-          <form className='login' onSubmit={this.handleFormSubmit}>
-            <label>Username:</label>
-            <input type="text" name="username" className='btn btn-light' value={this.state.username} onChange={ e => this.handleChange(e)}/>
-            
-            <label>Password:</label>
-            <input name="password" type='password' className='btn btn-light' value={this.state.password} onChange={ e => this.handleChange(e)} />
-            
-            <input type="submit" className='btn btn-dark' value="Signup" />
+        <div class="text-center body-login">
+          <form class="form-signin form-container" onSubmit={this.handleFormSubmit}>
+
+              <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
+              
+              <div class="inputs-login">
+                  <label for="inputusername" class="sr-only">Username</label>
+                  <input name="username" type="text" id="inputusername" class="form-control input-control" placeholder="Username" value={this.state.username} onChange={ e => this.handleChange(e)} required autofocus/>
+              </div>    
+              
+              <div class="inputs-login">
+                  <label for="inputPassword" class="sr-only">Password</label>
+                  <input type="password" name="password" id="inputPassword" class="form-control input-control" placeholder="Password" value={this.state.password} onChange={ e => this.handleChange(e)} required/>
+              </div>                
+              <button class="btn btn-lg btn-log-sig btn-block " type="submit">Sign up</button>
+              <br/>
+              <a>Already have account?</a>
+              <Link className="link-log-sig"to={"/login"}> Login</Link>                                     
           </form>
-    
-          <p>Already have account? 
-              <Link to={"/"}> Login</Link>
-          </p>
-    
         </div>
+
       );
     }
   }

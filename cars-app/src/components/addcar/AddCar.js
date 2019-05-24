@@ -110,28 +110,31 @@ class AddCar extends Component {
   render() {
     return (
       <div>
-        <h2>New Car</h2>
-        <form onSubmit={e => this.handleSubmit(e)}>
+        <h2 className="title-add">New Car</h2>
+        <form className="row-car" onSubmit={e => this.handleSubmit(e)}>
           {/* <div className="container"> */}
             <div className="row">
               <div className="col col-pad">
               {/* COLUNA 1 */}
-                <div className="form-group">
-                  <label>Name</label>
-                  <input type="text"
-                    className="form-control" 
-                    name="name" 
-                    value={ this.state.name } 
-                    onChange={ e => this.handleChange(e)} />
-                </div>
-                <div className="form-group">
-                  <label>Description</label>
-                  <input
-                    type="text" 
-                    className="form-control"
-                    name="description" 
-                    value={ this.state.description } 
-                    onChange={ e => this.handleChange(e)} />
+              <div className="cloud">
+                  <div className="form-group">
+                    <p>Cloud</p>
+                    <label>Name</label>
+                    <input type="text"
+                      className="form-control" 
+                      name="name" 
+                      value={ this.state.name } 
+                      onChange={ e => this.handleChange(e)} />
+                  </div>
+                  <div className="form-group">
+                    <label>Description</label>
+                    <input
+                      type="text" 
+                      className="form-control"
+                      name="description" 
+                      value={ this.state.description } 
+                      onChange={ e => this.handleChange(e)} />
+                  </div>
                 </div>
                 {/* FORM */}
                 <div className="form-group">
@@ -223,7 +226,7 @@ class AddCar extends Component {
                   <input
                     type="text" 
                     className="form-control"
-                    name="horsepower" 
+                    name="horsePower" 
                     value={ this.state.horsepower } 
                     onChange={ e => this.handleChange(e)} />
                 </div>
@@ -287,7 +290,7 @@ class AddCar extends Component {
                     type="text" 
                     className="form-control"
                     name="review" 
-                    // value={ this.state.description } 
+                    value={ this.state.description } 
                     onChange={ e => this.handleChange(e)} />
                 </div>
                 <div className="form-group">
@@ -301,9 +304,6 @@ class AddCar extends Component {
                 </div>
               </div>
             </div>
-          {/* </div> */}
-
-          {/* <div className="container"> */}
             <div className="row">
               <div className="col col-pad">
               {/* COLUNA 1 -ITENS*/}
@@ -397,14 +397,13 @@ class AddCar extends Component {
                 </div>
               </div>
             </div>
-          {/* </div> */}
 
           {/* BUTTOM SAVE */}
           <div className="buttons">
             <input 
               type="file" 
               onChange={(e) => this.handleFileUpload(e)} /> 
-            <button type="submit">Save Car</button>
+            <button className="btn btn-desk" type="submit">Save Car</button>
           </div> 
         </form>
       </div>

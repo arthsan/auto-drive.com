@@ -61,7 +61,7 @@ render() {
           <Route exact path='/' render={() => <Home setCarInfo={this.setCarInfo} user={this.state.loggedInUser} carInfo={this.state.carInfo} getUser={this.getTheUser}/>}/>
           <ProtectedRoute user={this.state.loggedInUser} path='/admin/addcar' component={AddCar} />
           <ProtectedRoute user={this.state.loggedInUser} path='/profile/:id' component={Profile} />
-          <ProtectedRoute user={this.state.loggedInUser} path='/quizform' component={QuizForm} />
+          <ProtectedRoute user={this.state.loggedInUser} getUser={this.getTheUser} path='/quizform' component={QuizForm} />
           <ProtectedRoute setCarInfo={this.setCarInfo} user={this.state.loggedInUser} path='/tablecars' component={TableCars} />
           <ProtectedRoute carInfo={this.state.carInfo} user={this.state.loggedInUser} path='/carpage' component={CarPage} />
           <ProtectedRoute carInfo={this.state.carInfo} user={this.state.loggedInUser} path='/bestcars' component={BestCar} />

@@ -4,12 +4,12 @@ import './footer.css'
 const Footer = (props) => {
   return (
     <div className="footer">
-      {/* <h5>About</h5> */}
-
-      <a  href="https://github.com/arthsan/project-cars">
-      </a>
-      <p class="copyright">Company Name © 2019</p>
-      
+      <div>
+        <a src="https://github.com/arthsan/project-cars">
+        <img border="0" alt="github" src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558494063/githublogo_hqr5p2.png" width="30" height="30"/>
+        </a>
+        <p class="copyright">Autodrive.com 2019</p>
+      </div>
     </div> 
   )    
 }

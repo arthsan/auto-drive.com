@@ -24,56 +24,93 @@ class NavBar extends Component {
 
   render() {
   if(this.state.loggedInUser) {
+    // ROLE ADMIN
     if(this.state.loggedInUser.role === 'ADMIN') {
     return (
       <div>
-        <nav className="navbar navbar-dark bg-dark">
-          <h3 className='logo'><Link to='/'>Project Cars</Link></h3>
-          <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car" >Best Cars</button></Link>
-            <div>
-              {this.state.loggedInUser.name}
-              <div className="links">
-              <Link to='/admin/addcar'><button className="btn btn-dark add-car" >Add Car</button></Link>
-              <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="btn btn-dark add-car">Profile</button>
-              </Link>
-              <Link to='/'><button type="button" className="btn btn-dark add-car" onClick={() => this.logoutUser()}>Logout</button>
-              </Link>
-            </div>
-            </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <img className="logo" src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558576846/logo_white_k8pynd.png"/>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active ">
+                <Link to='/'><button className="btn btn-dark add-car btn-desk btn-home" >Home</button></Link>
+              </li>
+              <li class="nav-item margin-btn">
+                <a>{this.state.loggedInUser.name}</a>
+              </li>
+              <li class="nav-item">
+                <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car btn-desk" >Best Cars</button></Link>
+              </li>
+              <li class="nav-item">
+                <Link to='/admin/addcar'><button className="btn btn-dark add-car btn-desk" >Add Car</button></Link>
+              </li>
+              <li class="nav-item">
+                <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="btn btn-dark add-car adj-nav-but">Profile</button></Link>
+              </li>
+              <li class="nav-item">
+                <Link to='/'><button type="button" className="btn btn-dark add-car adj-nav-but" onClick={() => this.logoutUser()}>Logout</button></Link>
+              </li>
+            </ul>
+          </div>
         </nav>
       </div>
     )
-    } else {
-      return (
-        <div>
-          <nav className="navbar navbar-dark bg-dark">
-          <h3 className='logo'><Link to='/'>Project Cars</Link></h3>
-                <div>
-                <a className="btn btn-dark" href="#" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
-                  {this.state.loggedInUser.username}
-                </a>
-                <div className="links">
-                <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car" >Best Cars</button></Link>
-                  <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="btn btn-dark add-car">Profile</button>
-                  </Link>
-                  <Link to='/'><button type="button" className="btn btn-dark add-car" onClick={() => this.logoutUser()}>Logout</button>
-                  </Link>
-                </div>
-                </div>
-          </nav>
-        </div>
+  } else {
+    return (
+      <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <img className="logo" src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558576846/logo_white_k8pynd.png"/>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active ">
+                <Link to='/'><button className="btn btn-dark add-car btn-desk btn-home">Home</button></Link>
+              </li>
+              <li class="nav-item margin-btn">
+                <a>{this.state.loggedInUser.name}</a>
+              </li>
+              <li class="nav-item">
+                <Link to={`/bestcars/${this.state.loggedInUser._id}`}><button className="btn btn-dark add-car btn-desk" >Best Cars</button></Link>
+              </li>
+              <li class="nav-item">
+                <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="btn btn-dark add-car">Profile</button></Link>
+              </li>
+              <li class="nav-item">
+                <Link to='/'><button type="button" className="btn btn-dark add-car" onClick={() => this.logoutUser()}>Logout</button></Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
       )
     }
   } else {
     return (
       <div>
-        <nav className="navbar navbar-dark bg-dark">
-        <h3 className='logo'><Link to='/'>Project Cars</Link></h3>
-          <div className='links'>
-          <div><Link to='/login'><button type="button" className="btn btn-dark">Login</button></Link></div>
-          <div><Link to='/signup'><button type="button" className="btn btn-dark">Signup</button></Link></div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <img className="logo" src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558576846/logo_white_k8pynd.png"/>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active ">
+                <Link to='/'><button className="btn btn-dark add-car btn-desk btn-home" >Home</button></Link>
+              </li>
+              <li class="nav-item margin-btn-log">
+                <Link to='/login'><button type="button" className="btn btn-light btn-desk">Login</button></Link>
+              </li>
+              <li class="nav-item">
+                <Link to='/signup'><button type="button" className="btn btn-light btn-desk nav-right">Signup</button></Link>
+              </li>
+            </ul>
           </div>
-      </nav>
+        </nav>
       </div>
     )
   }
