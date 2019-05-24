@@ -9,7 +9,6 @@ const yesIcon = <img src="https://res.cloudinary.com/dqtp9um44/image/upload/v155
 
 
 const CarPage = (props) => {
-  console.log(props.location.state)
   return (
     <div>
       <div className="box-car">

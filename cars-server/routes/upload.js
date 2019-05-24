@@ -87,7 +87,6 @@ router.post('/api/cars/create', (req, res, next) => {
 
 // QUIZ FORM
 router.get('/api/quiz/:id', (req, res, next) => {
-  console.log(req.params.id);
   Quiz.findOne({ user: req.params.id })
     .then((response) => {
       res.status(200).json(response);
@@ -102,7 +101,6 @@ router.put('/api/quiz/:id', (req, res, next) => {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
-  console.log('dasdkjalkjsd', req.body);
   const {
     q1, q2, q3, q4, q5, q6, q7, q8, q9,
   } = req.body.quizInfo;
