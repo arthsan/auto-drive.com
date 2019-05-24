@@ -22,3 +22,9 @@
 .title-add {
   margin: 2%;
 }
+
+.cloud{
+  border: 2px solid rgb(56, 133, 127);
+  border-radius: 10px;
+  padding: 10px;
+}

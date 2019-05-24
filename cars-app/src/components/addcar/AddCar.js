@@ -116,22 +116,25 @@ class AddCar extends Component {
             <div className="row">
               <div className="col col-pad">
               {/* COLUNA 1 */}
-                <div className="form-group">
-                  <label>Name</label>
-                  <input type="text"
-                    className="form-control" 
-                    name="name" 
-                    value={ this.state.name } 
-                    onChange={ e => this.handleChange(e)} />
-                </div>
-                <div className="form-group">
-                  <label>Description</label>
-                  <input
-                    type="text" 
-                    className="form-control"
-                    name="description" 
-                    value={ this.state.description } 
-                    onChange={ e => this.handleChange(e)} />
+              <div className="cloud">
+                  <div className="form-group">
+                    <p>Cloud</p>
+                    <label>Name</label>
+                    <input type="text"
+                      className="form-control" 
+                      name="name" 
+                      value={ this.state.name } 
+                      onChange={ e => this.handleChange(e)} />
+                  </div>
+                  <div className="form-group">
+                    <label>Description</label>
+                    <input
+                      type="text" 
+                      className="form-control"
+                      name="description" 
+                      value={ this.state.description } 
+                      onChange={ e => this.handleChange(e)} />
+                  </div>
                 </div>
                 {/* FORM */}
                 <div className="form-group">
