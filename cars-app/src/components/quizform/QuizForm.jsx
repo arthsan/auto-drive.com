@@ -90,7 +90,7 @@ class QuizForm extends Component {
           {/* QUESTION 1  */}
           <div className="form-group container-form back-question">
             <div className="question-form">
-              <h5>How much do you have avaliable to purchase?</h5>
+              <h5>How much do you have available to purchase?</h5>
               <section> 
                 <b>R$ 0</b> 
                 <input id="range-slider-demo" type="number" name="q1" value={ this.state.q1 }
@@ -123,7 +123,7 @@ class QuizForm extends Component {
           {/* QUESTION 4  */}
           <div className="form-group container-form">
             <div class="question-form">
-              <h5>Wich purpose of the vehicle?</h5>
+              <h5>Which purpose of the vehicle?</h5>
               <div class="form-check form-check-inline">
                 {/* <input class="form-check-input" type="radio" name="q4" id="inlineRadio3" 
                   value={ this.state.q4 }
@@ -188,7 +188,7 @@ class QuizForm extends Component {
           {/* QUESTION 8  */}
           <section className="form-group container-form">
             <div className="question-form">
-              <h5>Do you drives in dirt roads?</h5>
+              <h5>Do you drive on dirt roads?</h5>
               <div class="form-check form-check-inline">
               <div className="switches custom-control custom-switch">
                   <input type="checkbox" value={this.state.q8} id="customSwitch8" className="custom-control-input" name='q8' onChange={e => this.handleSwitch(e)} />

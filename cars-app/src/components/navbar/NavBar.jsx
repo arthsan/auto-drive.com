@@ -36,7 +36,7 @@ class NavBar extends Component {
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active ">
-               <button className="btn btn-dark add-car btn-desk btn-home" >Home</button><Link to='/'></Link>
+                <Link to='/'><button className="btn btn-dark add-car btn-desk btn-home" >Home</button></Link>
               </li>
               <li class="nav-item margin-btn">
                 <a>{this.state.loggedInUser.name}</a>
@@ -48,10 +48,10 @@ class NavBar extends Component {
                 <Link to='/admin/addcar'><button className="btn btn-dark add-car btn-desk" >Add Car</button></Link>
               </li>
               <li class="nav-item">
-                <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="btn btn-dark add-car">Profile</button></Link>
+                <Link to={`/profile/${this.state.loggedInUser._id}`} getUser={this.props.getUser}><button type="button" className="btn btn-dark add-car adj-nav-but">Profile</button></Link>
               </li>
               <li class="nav-item">
-                <Link to='/'><button type="button" className="btn btn-dark add-car" onClick={() => this.logoutUser()}>Logout</button></Link>
+                <Link to='/'><button type="button" className="btn btn-dark add-car adj-nav-but" onClick={() => this.logoutUser()}>Logout</button></Link>
               </li>
             </ul>
           </div>
@@ -69,7 +69,7 @@ class NavBar extends Component {
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active ">
-                <Link to='/'><button className="btn btn-dark add-car btn-desk btn-home" >Home</button></Link>
+                <Link to='/'><button className="btn btn-dark add-car btn-desk btn-home">Home</button></Link>
               </li>
               <li class="nav-item margin-btn">
                 <a>{this.state.loggedInUser.name}</a>

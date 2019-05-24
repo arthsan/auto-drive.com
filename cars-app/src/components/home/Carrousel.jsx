@@ -27,7 +27,7 @@ const Carrousel = (props) => {
                 <img src="https://res.cloudinary.com/dqtp9um44/image/upload/v1558564444/cars/civic-carrousel_tofwsn.jpg" className="d-block w-100" alt="civic" />
                 <div class="carousel-caption">
                   <h1>Used cars?</h1>
-                  <h4 class="">We have the choice for you</h4>
+                  <h4 class="">We have the best choice for you</h4>
                   <Link to='/login'></Link><a class="btn-desk btn btn-dark add-car btn-lg" href="#">Sign up today</a>
                 </div>
             </div>
