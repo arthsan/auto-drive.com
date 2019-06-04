@@ -5,7 +5,7 @@
 
 <p align="center"><img src="./cars-server/public/images/title.png" width = "600" height="400"></p>
 
-Auonetodrive.com - Front-End Aplication
+Auonetodrive.com - Full-Stack Aplication
 Autodrive.com is a plataform for those who want to know wich car is the best option for buying based on a serie of simple questions. It was developed as our final project at Ironhack's full stack course. This repository keeps the Front-end aplication developed in REACT (single-page-aplication), which is resposible for the user interface.
 
 ## Developers &  Version Control
@@ -21,7 +21,7 @@ Rafael Costa
 
 It was 3 weeks with a lot of work and dedication after almost 2 months bootcamping. Everybody at Ironhack's Sao Paulo has a huge participation on this achievement and we are very gratefull for all the support and for believe in our potential. :-)
 
-Front-end carachteristics
+Full-Stack carachteristics
 Stack used in production: REACT, Axios & Bootstrap
 
 Stack used during app development: Webpack, Sass, Babel (code compilers and transpilers)
