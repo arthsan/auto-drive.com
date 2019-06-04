@@ -54,4 +54,3 @@ Althouth the app is fully functional, improvements can be made to increase user'
 
 Please feel free to fork/clone this repo to look deeper into the logics of our app and contribute with some of the above improvements if you like :-) By forking this repo, use '$ npm install' in your terminal to add all dependencies needed and use '$ npm start' to initiate the app in your browser (webpack will automatically do this for you :=]).
 
-
