@@ -116,7 +116,6 @@ authRoutes.put('/profile/:id', (req, res, next) => {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
-  console.log('req.body');
   const {
     username, password, passCheck, name, image, email,
   } = req.body;

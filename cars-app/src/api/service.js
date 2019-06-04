@@ -14,7 +14,6 @@ export default {
   service,
 
   handleUpload (theFile) {
-    console.log('file in service: ', theFile)
     return service.post('/upload', theFile)
       .then(res => res.data)
       .catch(errorHandler);
@@ -28,7 +27,6 @@ export default {
   },
 
   saveNewQuiz(newQuiz) {
-    console.log('new quiz is : ', newQuiz)
     return service.post('/quizform', newQuiz)
       .then(res => res.data)
       .catch(errorHandler);
@@ -47,14 +45,12 @@ export default {
   },
 
   getQuiz(userId) {
-    console.log(userId)
     return service.get(`/quiz/${userId}`)
       .then(res => res.data)
       .catch(errorHandler);
   },
 
   editQuiz(userId, quizInfo) {
-    console.log(userId)
     return service.put(`/quiz/${userId}`, { quizInfo })
       .then(res => res.data)
       .catch(errorHandler)

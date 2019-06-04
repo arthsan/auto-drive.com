@@ -106,25 +106,15 @@ class BestCar extends Component {
   }
 
   masterFilter(arr, quiz) {
-    console.log(arr)
     const filter1 = this.filterQ1(arr, quiz);
-    console.log(filter1)
     const filter2 = this.filterQ2(this.filterQ1(filter1,quiz), quiz);
-    console.log(filter2)
     const filter3 = this.filterQ3(this.filterQ2(filter2,quiz), quiz);
-    console.log(filter3)
     const filter4 = this.filterQ4(this.filterQ3(filter3,quiz), quiz);
-    console.log(filter4)
     const filter5 = this.filterQ5(this.filterQ4(filter4,quiz), quiz);
-    console.log(filter5)
     const filter6 = this.filterQ6(this.filterQ5(filter5,quiz), quiz);
-    console.log(filter6)
     const filter7 = this.filterQ7(this.filterQ6(filter6,quiz), quiz);
-    console.log(filter7)
     const filter8 = this.filterQ8(this.filterQ7(filter7,quiz), quiz);
-    console.log(filter8)
     const filter9 = this.filterQ9(this.filterQ8(filter8,quiz), quiz);
-    console.log(filter9)
     return filter9;
   }
 

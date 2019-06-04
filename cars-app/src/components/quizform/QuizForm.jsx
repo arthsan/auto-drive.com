@@ -34,7 +34,6 @@ class QuizForm extends Component {
   handleSwitch = e => {  
     const { name, checked } = e.target;
     this.setState({ [name]: checked });
-    console.log(checked)
   }
 
   handleSelect = e => {  
@@ -67,7 +66,6 @@ class QuizForm extends Component {
     } else {
       service.editQuiz(this.props.loggedInUser._id, this.state)
       .then(res => {
-        console.log(res)
         this.setState({
           redirect: !this.state.redirect
         })
@@ -76,7 +74,7 @@ class QuizForm extends Component {
   }  
 
   render() {
-    console.log(this.props)
+    
     if(this.state.redirect) {
       return(
         <Redirect to={`/bestcars/${this.props.loggedInUser._id}`} />
