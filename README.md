@@ -3,7 +3,7 @@
 # Autodrive.com
 -------------------------
 
-<p align="center"><img src="./public/images/title.png" width = "600" height="400"></p>
+<p align="center"><img src="./cars-server/public/images/title.png" width = "600" height="400"></p>
 
 Auonetodrive.com - Front-End Aplication
 Autodrive.com is a plataform for those who want to know wich car is the best option for buying based on a serie of simple questions. It was developed as our final project at Ironhack's full stack course. This repository keeps the Front-end aplication developed in REACT (single-page-aplication), which is resposible for the user interface.
@@ -12,6 +12,7 @@ Autodrive.com is a plataform for those who want to know wich car is the best opt
 -------------------------
 
 Arthur Santoianni Barazzone Durant
+
 Rafael Costa
 
 
