@@ -3,7 +3,7 @@
 # Autodrive.com
 -------------------------
 
-<p align="center"><img src="./public/images/title.png" width = "600" height="400"></p>
+<p align="center"><img src="./cars-server/public/images/title.png" width = "600" height="400"></p>
 
 Auonetodrive.com - Front-End Aplication
 Autodrive.com is a plataform for those who want to know wich car is the best option for buying based on a serie of simple questions. It was developed as our final project at Ironhack's full stack course. This repository keeps the Front-end aplication developed in REACT (single-page-aplication), which is resposible for the user interface.
@@ -12,6 +12,7 @@ Autodrive.com is a plataform for those who want to know wich car is the best opt
 -------------------------
 
 Arthur Santoianni Barazzone Durant
+
 Rafael Costa
 
 
@@ -52,5 +53,4 @@ ADMIN Access: If you login with an ADMIN account, you will have some additiona a
 Althouth the app is fully functional, improvements can be made to increase user's experience:
 
 Please feel free to fork/clone this repo to look deeper into the logics of our app and contribute with some of the above improvements if you like :-) By forking this repo, use '$ npm install' in your terminal to add all dependencies needed and use '$ npm start' to initiate the app in your browser (webpack will automatically do this for you :=]).
-
 
